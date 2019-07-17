@@ -38,4 +38,4 @@ target_link_libraries( ${PROJECT_NAME}
 install(FILES lib_src/GeoMath.h DESTINATION include)
 install(FILES GeoMathConfig.cmake DESTINATION lib/cmake/GeoMath)
 
-install(TARGETS build/lib${PROJECT_NAME}_lib.a DESTINATION lib)
+install(FILES build/lib${PROJECT_NAME}_lib.a DESTINATION lib)
