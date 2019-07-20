@@ -22,7 +22,7 @@ bool
 GeoMath::v3::isNull()
 {
 
-	return (x == 0 && y == 0);
+	return (x == 0 && y == 0 && z==0);
 }
 
 double
