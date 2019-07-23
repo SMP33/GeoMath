@@ -2,7 +2,7 @@
 
 #include <math.h>
 #include <vector>
-#include <fstream>
+#include <ostream>
 
 double sign(double arg);
 
