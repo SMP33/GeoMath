@@ -1,0 +1,3 @@
+/usr/local/include/GeoMath.h
+/usr/local/lib/cmake/GeoMath/GeoMathConfig.cmake
+/usr/local/lib/libGeoMath_lib.a
