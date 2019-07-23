@@ -185,6 +185,7 @@ return os;
 
 std::ostream& GeoMath::operator<<(std::ostream& os, const GeoMath::v3geo& at)
 {
+os.precision(9);
 os <<"lat: "<<at.lat<<" lng: "<<at.lng<<" alt: "<<at.alt;
 return os;
 }
