@@ -177,9 +177,9 @@ GeoMath::v3::operator/(double demiter)
 }
 
 
-std::ostream& operator<<(std::ostream& os, const GeoMath::v3& at)
+std::ostream& GeoMath::operator<<(std::ostream& os, const GeoMath::v3& at)
 {
-os <<"x: "<<at.x<<"y: "<<at.y<<"z: "<<at.z;
+os <<"x: "<<at.x<<" y: "<<at.y<<" z: "<<at.z;
 return os;
 }
 
