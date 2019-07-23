@@ -176,6 +176,13 @@ GeoMath::v3::operator/(double demiter)
 	return result;
 }
 
+
+friend ostream& operator<<(ostream& os, const v3& at)
+{
+os <<"x: "<<at.x<<"y: "<<at.y<<"z: "<<at.z;
+return os;
+}
+
 GeoMath::v3
 GeoMath::v3geo::operator-(v3geo const& v2)
 {
