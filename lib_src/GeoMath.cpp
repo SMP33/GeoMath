@@ -183,6 +183,12 @@ os <<"x: "<<at.x<<" y: "<<at.y<<" z: "<<at.z;
 return os;
 }
 
+std::ostream& GeoMath::operator<<(std::ostream& os, const GeoMath::v3geo& at)
+{
+os <<"lat: "<<at.lat<<" lng: "<<at.lng<<" alt: "<<at.alt;
+return os;
+}
+
 GeoMath::v3
 GeoMath::v3geo::operator-(v3geo const& v2)
 {
