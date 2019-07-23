@@ -2,6 +2,8 @@
 
 #include <math.h>
 #include <vector>
+#include <fstream>
+
 double sign(double arg);
 
 namespace GeoMath
@@ -55,6 +57,8 @@ namespace GeoMath
 		v3 operator-(v3 const& v2);
 		v3 operator*(double factor);
 		v3 operator/(double factor);
+		
+		friend ostream& operator<<(ostream& os, const v3& at);
 
 	};
 
