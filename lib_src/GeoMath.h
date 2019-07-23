@@ -72,6 +72,8 @@ namespace GeoMath
 
 		v3 operator-(v3geo const& v2);
 		v3geo operator+(v3 const& v2);
+		
+		friend std::ostream& operator<<(std::ostream& os, const GeoMath::v3geo& at);
 	};
 
 
