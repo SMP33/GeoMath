@@ -58,7 +58,7 @@ namespace GeoMath
 		v3 operator*(double factor);
 		v3 operator/(double factor);
 		
-		friend ostream& operator<<(ostream& os, const v3& at);
+		friend std::ostream& operator<<(std::ostream& os, const v3& at);
 
 	};
 
