@@ -1,8 +1,0 @@
-/home/bird/GeoMath/build/CMakeFiles/install/strip.dir
-/home/bird/GeoMath/build/CMakeFiles/install/local.dir
-/home/bird/GeoMath/build/CMakeFiles/GeoMath.dir
-/home/bird/GeoMath/build/CMakeFiles/GeoMath_lib.dir
-/home/bird/GeoMath/build/CMakeFiles/edit_cache.dir
-/home/bird/GeoMath/build/CMakeFiles/rebuild_cache.dir
-/home/bird/GeoMath/build/CMakeFiles/list_install_components.dir
-/home/bird/GeoMath/build/CMakeFiles/install.dir
