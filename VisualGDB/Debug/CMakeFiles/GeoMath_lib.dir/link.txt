@@ -1,0 +1,2 @@
+/usr/bin/ar qc libGeoMath_lib.a  CMakeFiles/GeoMath_lib.dir/lib_src/GeoMath.cpp.o
+/usr/bin/ranlib libGeoMath_lib.a
