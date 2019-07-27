@@ -6,10 +6,86 @@ sign(double arg)
 	return arg < 0 ? -1 : 1;
 }
 
+
+
+
+GeoMath::v2::v2(double x_, double y_)
+	: x(x_)
+	, y(y_)
+{
+}
+
+bool
+GeoMath::v2::isNull()
+{
+
+	return (x == 0 && y == 0);
+}
+
+double
+GeoMath::v2::length_xy()
+{
+	double result = sqrt(x * x + y * y);
+	return result;
+}
+
+
+double
+GeoMath::v2::angle_xy(v2 v = v2(1, 0))
+{
+	double sgn;
+	double value;
+	if (this->isNull() || v.isNull())
+		return 0;
+
+	value = this->x * v.x + this->y * v.y;
+	value = value / (this->length_xy() * v.length_xy());
+	sgn = -sign(this->x * v.y - this->y * v.x);
+
+	return sgn * acos(value);
+}
+
+GeoMath::v2
+GeoMath::v2::normalize_xy(double abs = 1)
+{
+	if (this->isNull())
+		return v2(0, 0);
+
+	v2     result;
+	double factor = abs / this->length_xy();
+
+	result.x = this->x * factor;
+	result.y = this->y * factor;
+
+	return result;
+}
+
+
+GeoMath::v2
+GeoMath::v2::rotateXY(double rad)
+{
+	v2 result(this->x * cos(rad) - this->y * sin(rad),
+		this->x * sin(rad) + this->y * cos(rad));
+	return result;
+}
+
+
+
+
+
+
+
 GeoMath::v3::v3(double x_, double y_, double z_)
 	: x(x_)
 	, y(y_)
 	, z(z_)
+{
+}
+
+GeoMath::v3::v3(v2 v)
+	: x(v.x)
+	, y(v.y)
+	, z(0)
 {
 }
 
@@ -143,6 +219,39 @@ GeoMath::v3::rotate(double a, GeoMath::Axis axis, Hand hand )
 	return res;
 }
 
+
+GeoMath::v2
+GeoMath::v2::operator+(v2 const& v)
+{
+	v2 result(this->x + v.x, this->y + v.y);
+	return result;
+}
+
+GeoMath::v2
+GeoMath::v2::operator-(v2 const& v)
+{
+	v2 result(this->x - v.x, this->y - v.y);
+	return result;
+}
+
+GeoMath::v2 GeoMath::v2::operator*(double factor)
+{
+	v2 result(*this);
+	result.x = result.x * factor;
+	result.y = result.y * factor;
+	return result;
+}
+
+GeoMath::v2
+GeoMath::v2::operator/(double demiter)
+{
+	v2 result(*this);
+	result.x = result.x / demiter;
+	result.y = result.y / demiter;
+	return result;
+}
+
+
 GeoMath::v3
 GeoMath::v3::operator+(v3 const& v2)
 {
@@ -177,17 +286,33 @@ GeoMath::v3::operator/(double demiter)
 }
 
 
+std::ostream& GeoMath::operator<<(std::ostream& os, const GeoMath::v2& at)
+{
+	os << "x: " << at.x << " y: " << at.y;
+	return os;
+}
+
 std::ostream& GeoMath::operator<<(std::ostream& os, const GeoMath::v3& at)
 {
 os <<"x: "<<at.x<<" y: "<<at.y<<" z: "<<at.z;
 return os;
 }
 
+
+
 std::ostream& GeoMath::operator<<(std::ostream& os, const GeoMath::v3geo& at)
 {
 os.precision(9);
 os <<"lat: "<<at.lat<<" lng: "<<at.lng<<" alt: "<<at.alt;
 return os;
+}
+
+
+bool
+GeoMath::v3geo::isNull()
+{
+
+	return (lat == 0 && lng == 0&&alt==0);
 }
 
 GeoMath::v3
@@ -314,5 +439,73 @@ std::vector<GeoMath::v3geo> GeoMath::RouteLine::absPosition(v3geo home)
 }
 
 GeoMath::RouteLine::~RouteLine()
+{
+}
+
+
+GeoMath::RouteTemplate2D::RouteTemplate2D():
+	home_abs(0,0,0),
+	point_offset(1),
+	point_home(1),
+	reference_point(0,0,0),
+	scale(0),
+	course(0)
+{
+	point_offset[0] = GeoMath::v2(0, 0);
+	point_home[0] = GeoMath::v2(0, 0);
+}
+
+void GeoMath::RouteTemplate2D::add_next(PositionType position_type, v2 point)
+{
+	v2 home;
+	v2 offset;
+	switch (position_type)
+	{
+	case PositionType::HOME:
+		
+		home = point;
+		offset = point_home.back() - home;
+		
+		break;
+		
+	case PositionType::OFFSET:
+		
+		offset = point;
+		home = point_home.back() + offset;
+		
+		break;
+	}
+	
+	point_home.push_back(home);
+	point_offset.push_back(offset);
+}
+
+GeoMath::v3geo GeoMath::RouteTemplate2D::calc_abs(int i)
+{
+	GeoMath::v3geo abs;
+	
+	return abs;	
+}
+
+GeoMath::RouteTemplate2D::Position GeoMath::RouteTemplate2D::at(int i)
+{
+	Position pos;
+	pos.home = point_home[i];
+	pos.offset = point_offset[i];
+	pos.abs = calc_abs(i);
+	return pos;
+}
+
+GeoMath::RouteTemplate2D::Position GeoMath::RouteTemplate2D::operator[](const int i)
+{
+	return at(i);
+}
+
+int GeoMath::RouteTemplate2D::size()
+{
+	return point_home.size();
+}
+
+GeoMath::RouteTemplate2D::~RouteTemplate2D()
 {
 }

@@ -33,6 +33,33 @@ namespace GeoMath
 		LEFT,
 		RIGHT
 	};
+	
+	
+	class v2
+	{
+	public:
+		double x;
+		double y;
+
+		v2(double x_ = 0, double y_ = 0);
+
+		bool isNull();
+		double	length_xy();
+		double	length_xyz();
+		double angle_xy(v2 v);
+
+		v2 normalize_xy(double abs);
+		v2 rotateXY(double rad);
+
+		v2 operator+(v2 const& v);
+		v2 operator-(v2 const& v);
+		v2 operator*(double factor);
+		v2 operator/(double factor);
+		
+		friend std::ostream& operator<<(std::ostream& os, const GeoMath::v2& at);
+
+	};
+	
 	class v3
 	{
 	public:
@@ -41,6 +68,7 @@ namespace GeoMath
 		double z;
 
 		v3(double x_ = 0, double y_ = 0, double z_ = 0);
+		v3(v2 v);
 
 		bool isNull();
 		double	length_xy();
@@ -68,6 +96,9 @@ namespace GeoMath
 		double lat;
 		double lng;
 		double alt;
+		
+		bool isNull();
+		
 		v3geo(double lat_ = 0, double lng_ = 0, double alt_ = 0);
 
 		v3 operator-(v3geo const& v2);
@@ -76,7 +107,66 @@ namespace GeoMath
 		friend std::ostream& operator<<(std::ostream& os, const GeoMath::v3geo& at);
 	};
 
+	
+	
+	
+	
+	
+	
 
+	
+	class RouteTemplate2D
+	{
+	public:
+		enum PositionType
+		{
+			OFFSET,
+			HOME
+		};
+		
+		struct Position
+		{
+			GeoMath::v2 offset;
+			GeoMath::v2 home;
+			GeoMath::v3geo abs;
+		};
+		
+RouteTemplate2D();
+		~RouteTemplate2D();
+		
+		GeoMath::v3geo home_abs;
+		GeoMath::v3geo reference_point;
+		
+		void add_next(PositionType position,v2 point);
+		
+		Position at(int i);
+		int size();
+	private:
+		
+		float course;
+		float scale;
+		
+		GeoMath::v3geo calc_abs(int i);
+		std::vector<GeoMath::v2> point_offset;
+		std::vector<GeoMath::v2> point_home;
+		
+		Position operator[](const int i);
+	};
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	class RouteLine
 	{
 	public:

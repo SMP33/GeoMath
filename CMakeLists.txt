@@ -23,19 +23,23 @@ target_include_directories(${PROJECT_NAME}_lib
         ${PROJECT_SOURCE_DIR}/lib_src
 )
 
-#------------------- Create an executable --------------------------------------
-file(GLOB 
-          CPP_SOURCES "src/*.cpp")
-          
-add_executable(${PROJECT_NAME} ${CPP_SOURCES})
+
 
 # link the new library target with the binary target
-target_link_libraries( ${PROJECT_NAME}
-    PRIVATE 
-        ${PROJECT_NAME}_lib
-)
+
 
 install(FILES lib_src/GeoMath.h DESTINATION include)
 install(FILES GeoMathConfig.cmake DESTINATION lib/cmake/GeoMath)
 
 install(FILES build/lib${PROJECT_NAME}_lib.a DESTINATION lib)
+
+#------------------- Create an executable --------------------------------------
+file(GLOB 
+          CPP_SOURCES "src/*.cpp")
+
+add_executable(${PROJECT_NAME} ${CPP_SOURCES})
+
+find_package(GeoMath REQUIRED)
+include_directories(${GeoMath_INCLUDE_DIRS})
+
+target_link_libraries(${PROJECT_NAME} ${GeoMath_LIBS})
