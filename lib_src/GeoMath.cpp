@@ -348,6 +348,27 @@ GeoMath::v3geo::operator+(v3 const& v2)
 	return result;
 }
 
+bool GeoMath::v2::operator ==(v2 const& p2)
+{
+	v2 p1 = *this;
+	return (p1.x == p2.x&&p1.y == p2.y);
+}
+
+
+bool GeoMath::v3::operator ==(v3 const& p2)
+{
+	v3 p1 = *this;
+	return (p1.x == p2.x&&p1.y == p2.y && p1.z == p2.z);
+}
+
+
+bool GeoMath::v3geo::operator ==(v3geo const& p2)
+{
+	v3geo p1 = *this;
+	return (p1.lat == p2.lng&&p1.lng == p2.lat&&p1.alt == p2.alt);
+}
+
+
 std::vector<GeoMath::v3geo>
 GeoMath::absPosListGeo(GeoMath::v3geo           point,
 	std::vector<GeoMath::v3> list,
@@ -391,22 +412,22 @@ GeoMath::RouteLine::RouteLine()
 }
 
 bool 
-GeoMath::RouteLine::append(v3 point, Notion notion)
+GeoMath::RouteLine::add_next(v3 point, PositionType position_type)
 {
-	switch (notion)
+	switch (position_type)
 	{
-	case GeoMath::RouteLine::Centre:
+	case PositionType::HOME:
 		points.push_back(point);
 		break;
 
-	case GeoMath::RouteLine::Chain:
+	case PositionType::OFFSET:
 		points.push_back(points.back() + point);
 		break;
 	}
 	return true;
 }
 
-GeoMath::v3 GeoMath::RouteLine::at(unsigned long i, Notion notion)
+GeoMath::v3 GeoMath::RouteLine::at(unsigned long i, PositionType notion)
 {
 	return points[i];
 }
@@ -444,15 +465,35 @@ GeoMath::RouteLine::~RouteLine()
 
 
 GeoMath::RouteTemplate2D::RouteTemplate2D():
+	reference_point_1_abs(0,0,0),
+	reference_point_2_abs(0,0,0),
+	reference_point_1_meters(0,0,0),
+	reference_point_2_meters(0,0,0),
+	state(GeoMath::RouteTemplate2D::NOT_SELECT),
 	home_abs(0,0,0),
+	home_meters(0,0),
 	point_offset(1),
 	point_home(1),
-	reference_point(0,0,0),
-	scale(0),
+	scale(1),
 	course(0)
 {
 	point_offset[0] = GeoMath::v2(0, 0);
 	point_home[0] = GeoMath::v2(0, 0);
+}
+
+GeoMath::RouteTemplate2D::RouteTemplate2D(const RouteTemplate2D& route):
+	reference_point_1_abs(0,0,0),
+	reference_point_2_abs(0,0,0),
+	reference_point_1_meters(0,0,0),
+	reference_point_2_meters(0,0,0),
+	state(GeoMath::RouteTemplate2D::NOT_SELECT),
+	home_abs(0,0,0),
+	home_meters(0,0),
+	point_offset(route.point_offset),
+	point_home(route.point_home),
+	scale(1),
+	course(0)
+{
 }
 
 void GeoMath::RouteTemplate2D::add_next(PositionType position_type, v2 point)
@@ -480,19 +521,21 @@ void GeoMath::RouteTemplate2D::add_next(PositionType position_type, v2 point)
 	point_offset.push_back(offset);
 }
 
-GeoMath::v3geo GeoMath::RouteTemplate2D::calc_abs(int i)
-{
-	GeoMath::v3geo abs;
-	
-	return abs;	
-}
-
 GeoMath::RouteTemplate2D::Position GeoMath::RouteTemplate2D::at(int i)
 {
 	Position pos;
+	
 	pos.home = point_home[i];
+	pos.home = pos.home.rotateXY(course)*scale;
+	
 	pos.offset = point_offset[i];
-	pos.abs = calc_abs(i);
+	pos.offset = pos.offset.rotateXY(course)*scale;
+	
+	if (state == GeoMath::RouteTemplate2D::ABSOLUT)
+		pos.abs = home_abs + pos.home;
+	else
+		pos.abs = v3geo(0, 0, 0);
+	
 	return pos;
 }
 
@@ -507,5 +550,111 @@ int GeoMath::RouteTemplate2D::size()
 }
 
 GeoMath::RouteTemplate2D::~RouteTemplate2D()
+{
+}
+
+bool GeoMath::RouteTemplate2D::set_reference_points(v3geo abs1, int index_1, v3geo abs2, int index_2)
+{
+	if (state != GeoMath::RouteTemplate2D::NOT_SELECT)
+		return false;
+	
+	int size = this->size();
+	if (index_1 >= size || index_2 >= size) 
+		return false;
+	
+	if (abs1 == abs2)
+		return false;
+	
+	if (index_1 == index_2)
+		return false;
+	
+	v3 offset_abs_3d = abs2 - abs1;
+	v2 offset_abs = v2(offset_abs_3d.x, offset_abs_3d.y);
+	
+	v2 p1 = point_home[index_1];
+	v2 p2 = point_home[index_2];	
+	v2 offset = p2 - p1;
+	
+	scale = offset_abs.length_xy() / offset.length_xy();
+	course = offset_abs.angle_xy(offset);
+	
+	home_abs = abs1 +(p1.rotateXY(course)*scale*(-1));
+	
+	state = GeoMath::RouteTemplate2D::ABSOLUT;
+	return true;
+}
+
+bool GeoMath::RouteTemplate2D::set_reference_points(v2 r1, int index_1, v2 r2, int index_2)
+{
+	if (state != GeoMath::RouteTemplate2D::NOT_SELECT)
+		return false;
+	
+	int size = this->size();
+	if (index_1 >= size || index_2 >= size) 
+		return false;
+	
+	if (r1 == r2)
+		return false;
+	
+	if (index_1 == index_2)
+		return false;
+	
+	v3 offset_abs_3d = r2 - r1;
+	v2 offset_abs = v2(offset_abs_3d.x, offset_abs_3d.y);
+	
+	v2 p1 = point_home[index_1];
+	v2 p2 = point_home[index_2];	
+	v2 offset = p2 - p1;
+	
+	scale = offset_abs.length_xy() / offset.length_xy();
+	course = offset_abs.angle_xy(offset);
+	
+	home_meters = r1 + (p1.rotateXY(course)*scale*(-1));
+	
+	state = GeoMath::RouteTemplate2D::METERS;
+	return true;
+}
+
+GeoMath::v2 GeoMath::RouteTemplate2D::get_home_meters()
+{
+	return home_meters;
+}
+
+GeoMath::SimpleFigure3D::SimpleFigure3D():
+	point_home(1),
+	point_offset(1)
+{
+	
+}
+
+void
+GeoMath::SimpleFigure3D::add_next(PositionType position_type, v3 point)
+{
+	v3 home;
+	v3 offset;
+	switch (position_type)
+	{
+	case PositionType::HOME:
+		
+		home = point;
+		offset = point_home.back() - home;
+		
+		break;
+		
+	case PositionType::OFFSET:
+		
+		offset = point;
+		home = point_home.back() + offset;
+		
+		break;
+	}
+	
+	point_home.push_back(home);
+	point_offset.push_back(offset);
+}
+
+
+
+GeoMath::SimpleFigure3D::~SimpleFigure3D()
 {
 }
