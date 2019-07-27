@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/bird/GeoMath/lib_src/GeoMath.cpp
+GeoMath.h
+/home/bird/GeoMath/lib_src/GeoMath.h
+
+/home/bird/GeoMath/lib_src/GeoMath.h
+math.h
+-
+vector
+-
+ostream
+-
+
