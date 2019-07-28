@@ -342,7 +342,7 @@ return os;
 std::ostream& GeoMath::operator<<(std::ostream& os, const GeoMath::v3geo& at)
 {
 	os.precision(15);
-	os.flags(std::ios::left);
+	os.flags(std::ios::left | std::ios::fixed);
 	os.fill('0');
 	os.width(6);
 	os << " lat: ";
@@ -737,4 +737,21 @@ void GeoMath::SimpleFigure3D::rotate(double rad, Axis axis, v3 from_point, Hand 
 		point_offset[i].rotate(rad, axis, from_point, hand);
 		point_home[i].rotate(rad, axis, from_point, hand);
 	}
+}
+
+GeoMath::v3 GeoMath::SimpleFigure3D::center()
+{
+	auto max_x = std::max_element(point_home.begin(), point_home.end(),[] (v3 const& l, v3 const& r) {return l.x < r.x;});
+	auto max_y = std::max_element(point_home.begin(), point_home.end(),[] (v3 const& l, v3 const& r) {return l.y < r.y;});
+	auto max_z = std::max_element(point_home.begin(), point_home.end(),[] (v3 const& l, v3 const& r) {return l.z < r.z;});
+	
+	auto min_x = std::min_element(point_home.begin(), point_home.end(), [](v3 const& l, v3 const& r) {return l.x < r.x;});
+	auto min_y = std::min_element(point_home.begin(), point_home.end(), [](v3 const& l, v3 const& r) {return l.y < r.y;});
+	auto min_z = std::min_element(point_home.begin(), point_home.end(), [](v3 const& l, v3 const& r) {return l.z < r.z;});
+	
+	double x = (*max_x + *min_x).x/2;
+	double y = (*max_y + *min_y).y/2;
+	double z = (*max_z + *min_z).z/2;
+	
+	return v3(x,y,z);
 }

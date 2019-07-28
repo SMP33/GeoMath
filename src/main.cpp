@@ -47,25 +47,25 @@ int main(int argc, char* argv[])
 		heart_1.add_next(HOME, v2(0, 0));
 		
 		
-		//line.set_reference_points(v3geo(55.894184, 37.250316, 0), 0, v3geo(55.894574, 37.250208, 0), 11);
-		heart_1.set_reference_points(v2(0, 0), 0, v2(50, 0), 4);
+		
+		heart_1.set_reference_points(v2(0, 0), 0, v2(20, 0), 5);
 		
 		RouteLine line;
 		SimpleFigure3D fig;
 	
 		for (size_t i = 0; i <heart_1.size(); i++)
 		{
-			cout << v3geo(55.894184, 37.250316, 0)+ heart_1[i].home << endl;
+			//cout << v3geo(55.894184, 37.250316, 0)+ heart_1[i].home << endl;
 			fig.add_next(HOME, heart_1[i].home);
 		}
 
 	
-		fig.rotate(90*CONST.DEG2RAD, Y, v3(0, 0, 0));
-	
+		//fig.rotate(90*CONST.DEG2RAD, Y, v3(0, 0, 0));
 		for (size_t i = 0; i < fig.size(); i++)
 		{
-			cout << v3geo(55.894184, 37.250316, 0) + fig[i].home << endl;
+			cout << v3geo(55.894184, 37.250316, 10) + fig[i].home << endl;
 		}
-	
+		
+	cout << v3geo(55.894184, 37.250316, 10)+fig.center() << endl;
 return 0;
 }

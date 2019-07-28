@@ -4,6 +4,7 @@
 #include <vector>
 #include <ostream>
 #include <iostream>
+#include <algorithm>
 
 double sign(double arg);
 
@@ -198,6 +199,8 @@ class v2
 		int size();
 		void rotate(double rad, Axis axis, v3 from_point, Hand hand = RIGHT);
 		Position operator[](const int i);
+		
+		GeoMath::v3 center();
 
 	private:
 		std::vector<GeoMath::v3> point_offset;
