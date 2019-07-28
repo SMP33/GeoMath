@@ -3,8 +3,10 @@
 #include <math.h>
 #include <vector>
 #include <ostream>
+#include <iostream>
 
 double sign(double arg);
+
 
 namespace GeoMath
 {
@@ -40,7 +42,9 @@ namespace GeoMath
 		HOME
 	};
 	
-	class v2
+	
+	
+class v2
 	{
 	public:
 		double x;
@@ -86,6 +90,7 @@ namespace GeoMath
 		v3 rotateXY(double rad);
 
 		v3 rotate(double rad, Axis axis,Hand hand=RIGHT);
+		v3 rotate(double rad, Axis axis, v3 from_point, Hand hand = RIGHT);
 
 		v3 operator+(v3 const& v2);
 		v3 operator-(v3 const& v2);
@@ -98,6 +103,9 @@ namespace GeoMath
 
 	};
 
+	
+	
+	
 	class v3geo
 	{
 	public:
@@ -175,15 +183,25 @@ namespace GeoMath
 	class SimpleFigure3D
 	{
 	public:
+		
+		struct Position
+		{
+			GeoMath::v3 offset;
+			GeoMath::v3 home;
+		};
+		
 		SimpleFigure3D();
 		~SimpleFigure3D();
 		
 		void add_next(PositionType position, v3 point);
-		std::vector<GeoMath::v3> point_offset;
-		std::vector<GeoMath::v3> point_home;
+		Position at(int i);		
+		int size();
+		void rotate(double rad, Axis axis, v3 from_point, Hand hand = RIGHT);
+		Position operator[](const int i);
 
 	private:
-		
+		std::vector<GeoMath::v3> point_offset;
+		std::vector<GeoMath::v3> point_home;
 	};
 
 
@@ -207,6 +225,7 @@ namespace GeoMath
 			HOME,
 			OFFSET
 		};
+		
 		std::vector<v3> points;//points in Centre notion
 		bool add_next(v3 point, PositionType notion);
 		v3 at(unsigned long i, PositionType notion);

@@ -7,6 +7,45 @@ sign(double arg)
 }
 
 
+template<typename T, size_t M, size_t N>
+	void arr2copy(const T from[M][N], T (&to)[M][N])
+	{
+		for (size_t m = 0; m < M; m++)
+		{
+			for (size_t n = 0; n < N; n++)
+			{
+				to[m][n] = from[m][n];
+			}
+		}
+	}
+
+GeoMath::v3 GeoMath::v3::rotate(double rad,  Axis axis, v3 c, Hand hand)
+{	
+	v3 res(0, 0, 0);
+	switch (axis)
+	{	
+	case GeoMath::Axis::X:
+		res.x = this->x;
+		res.y = c.y + (this->y - c.y)*cos(rad) + (this->z - c.z)*sin(rad);
+		res.z = c.z - (this->y - c.y)*sin(rad) + (this->z - c.z)*cos(rad);
+		break;
+		
+	case GeoMath::Axis::Y:
+		res.y = this->y;
+		res.x = c.x + (this->x - c.x)*cos(rad) - (this->z - c.z)*sin(rad);
+		res.z = c.z + (this->x - c.x)*sin(rad) + (this->z - c.z)*cos(rad);
+		break;
+		
+	case GeoMath::Axis::Z:
+		res.z = this->z;
+		res.x = c.x + (this->x - c.x)*cos(rad) + (this->y - c.y)*sin(rad);
+		res.y = c.y - (this->x - c.x)*sin(rad) + (this->y - c.y)*cos(rad);
+		break;
+	}		
+	this->x = res.x;
+	this->y = res.y;
+	this->z = res.z;
+}
 
 
 GeoMath::v2::v2(double x_, double y_)
@@ -302,9 +341,22 @@ return os;
 
 std::ostream& GeoMath::operator<<(std::ostream& os, const GeoMath::v3geo& at)
 {
-os.precision(9);
-os <<"lat: "<<at.lat<<" lng: "<<at.lng<<" alt: "<<at.alt;
-return os;
+	os.precision(15);
+	os.flags(std::ios::left);
+	os.fill('0');
+	os.width(6);
+	os << " lat: ";
+	os.width(18);
+	os<<at.lat;
+	os.width(6);
+	os << " lng: ";
+	os.width(18);
+	os << at.lng;
+	os.width(6);
+	os << " alt: ";
+	os.width(18);
+	os<<at.alt;
+	return os;
 }
 
 
@@ -549,6 +601,12 @@ int GeoMath::RouteTemplate2D::size()
 	return point_home.size();
 }
 
+int GeoMath::SimpleFigure3D::size()
+{
+	return point_home.size();
+}
+
+
 GeoMath::RouteTemplate2D::~RouteTemplate2D()
 {
 }
@@ -653,8 +711,30 @@ GeoMath::SimpleFigure3D::add_next(PositionType position_type, v3 point)
 	point_offset.push_back(offset);
 }
 
+GeoMath::SimpleFigure3D::Position GeoMath::SimpleFigure3D::at(int i)
+{
+	Position pos;
+	
+	pos.home = point_home[i];
+	pos.offset = point_offset[i];
+	
+	return pos;
+}
 
+GeoMath::SimpleFigure3D::Position GeoMath::SimpleFigure3D::operator[](const int i)
+{
+	return at(i);
+}
 
 GeoMath::SimpleFigure3D::~SimpleFigure3D()
 {
+}
+
+void GeoMath::SimpleFigure3D::rotate(double rad, Axis axis, v3 from_point, Hand hand )
+{
+	for (std::size_t i = 0; i < size(); i++)
+	{
+		point_offset[i].rotate(rad, axis, from_point, hand);
+		point_home[i].rotate(rad, axis, from_point, hand);
+	}
 }

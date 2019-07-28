@@ -42,4 +42,4 @@ add_executable(${PROJECT_NAME} ${CPP_SOURCES})
 find_package(GeoMath REQUIRED)
 include_directories(${GeoMath_INCLUDE_DIRS})
 
-target_link_libraries(${PROJECT_NAME} ${GeoMath_LIBS})
+target_link_libraries(${PROJECT_NAME} /home/bird/GeoMath/VisualGDB/Release/libGeoMath_lib.a)
