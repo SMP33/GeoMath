@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/GeoMath.dir/lib_src/GeoMath.cpp.o"
   "CMakeFiles/GeoMath.dir/src/main.cpp.o"
   "GeoMath.pdb"
   "GeoMath"

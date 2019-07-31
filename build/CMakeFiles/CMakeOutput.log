@@ -1,4 +1,4 @@
-The system is: Linux - 4.9.140-tegra - aarch64
+The system is: Linux - 4.15.0-1041-raspi2 - aarch64
 Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
 Compiler: /usr/bin/cc 
 Build flags: 
@@ -10,7 +10,7 @@ The output was:
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
 
-The C compiler identification is GNU, found in "/home/bird/GeoMath/build/CMakeFiles/3.10.2/CompilerIdC/a.out"
+The C compiler identification is GNU, found in "/home/ubuntu/GeoMath/build/CMakeFiles/3.10.2/CompilerIdC/a.out"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
 Compiler: /usr/bin/c++ 
@@ -23,33 +23,33 @@ The output was:
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
 
-The CXX compiler identification is GNU, found in "/home/bird/GeoMath/build/CMakeFiles/3.10.2/CompilerIdCXX/a.out"
+The CXX compiler identification is GNU, found in "/home/ubuntu/GeoMath/build/CMakeFiles/3.10.2/CompilerIdCXX/a.out"
 
 Determining if the C compiler works passed with the following output:
-Change Dir: /home/bird/GeoMath/build/CMakeFiles/CMakeTmp
+Change Dir: /home/ubuntu/GeoMath/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_41303/fast"
-/usr/bin/make -f CMakeFiles/cmTC_41303.dir/build.make CMakeFiles/cmTC_41303.dir/build
-make[1]: Entering directory '/home/bird/GeoMath/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_41303.dir/testCCompiler.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_41303.dir/testCCompiler.c.o   -c /home/bird/GeoMath/build/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_41303
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_41303.dir/link.txt --verbose=1
-/usr/bin/cc      CMakeFiles/cmTC_41303.dir/testCCompiler.c.o  -o cmTC_41303 
-make[1]: Leaving directory '/home/bird/GeoMath/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_69a93/fast"
+/usr/bin/make -f CMakeFiles/cmTC_69a93.dir/build.make CMakeFiles/cmTC_69a93.dir/build
+make[1]: Entering directory '/home/ubuntu/GeoMath/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_69a93.dir/testCCompiler.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_69a93.dir/testCCompiler.c.o   -c /home/ubuntu/GeoMath/build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_69a93
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_69a93.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_69a93.dir/testCCompiler.c.o  -o cmTC_69a93 
+make[1]: Leaving directory '/home/ubuntu/GeoMath/build/CMakeFiles/CMakeTmp'
 
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: /home/bird/GeoMath/build/CMakeFiles/CMakeTmp
+Change Dir: /home/ubuntu/GeoMath/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_0eba5/fast"
-/usr/bin/make -f CMakeFiles/cmTC_0eba5.dir/build.make CMakeFiles/cmTC_0eba5.dir/build
-make[1]: Entering directory '/home/bird/GeoMath/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_0eba5.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_0eba5.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c
-Linking C executable cmTC_0eba5
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0eba5.dir/link.txt --verbose=1
-/usr/bin/cc     -v CMakeFiles/cmTC_0eba5.dir/CMakeCCompilerABI.c.o  -o cmTC_0eba5 
+Run Build Command:"/usr/bin/make" "cmTC_e261c/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e261c.dir/build.make CMakeFiles/cmTC_e261c.dir/build
+make[1]: Entering directory '/home/ubuntu/GeoMath/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e261c.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_e261c.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_e261c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e261c.dir/link.txt --verbose=1
+/usr/bin/cc     -v CMakeFiles/cmTC_e261c.dir/CMakeCCompilerABI.c.o  -o cmTC_e261c 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/aarch64-linux-gnu/7/lto-wrapper
@@ -59,24 +59,24 @@ Thread model: posix
 gcc version 7.4.0 (Ubuntu/Linaro 7.4.0-1ubuntu1~18.04.1) 
 COMPILER_PATH=/usr/lib/gcc/aarch64-linux-gnu/7/:/usr/lib/gcc/aarch64-linux-gnu/7/:/usr/lib/gcc/aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/7/:/usr/lib/gcc/aarch64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/aarch64-linux-gnu/7/:/usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/7/../../../../lib/:/lib/aarch64-linux-gnu/:/lib/../lib/:/usr/lib/aarch64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/aarch64-linux-gnu/7/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_0eba5' '-mlittle-endian' '-mabi=lp64'
- /usr/lib/gcc/aarch64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/aarch64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/aarch64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccf5MGHQ.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr --hash-style=gnu --as-needed -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux --fix-cortex-a53-843419 -pie -z now -z relro -o cmTC_0eba5 /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/Scrt1.o /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/crti.o /usr/lib/gcc/aarch64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/aarch64-linux-gnu/7 -L/usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu -L/usr/lib/gcc/aarch64-linux-gnu/7/../../../../lib -L/lib/aarch64-linux-gnu -L/lib/../lib -L/usr/lib/aarch64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/aarch64-linux-gnu/7/../../.. CMakeFiles/cmTC_0eba5.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/aarch64-linux-gnu/7/crtendS.o /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_0eba5' '-mlittle-endian' '-mabi=lp64'
-make[1]: Leaving directory '/home/bird/GeoMath/build/CMakeFiles/CMakeTmp'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_e261c' '-mlittle-endian' '-mabi=lp64'
+ /usr/lib/gcc/aarch64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/aarch64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/aarch64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/cckvt86x.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr --hash-style=gnu --as-needed -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux --fix-cortex-a53-843419 -pie -z now -z relro -o cmTC_e261c /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/Scrt1.o /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/crti.o /usr/lib/gcc/aarch64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/aarch64-linux-gnu/7 -L/usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu -L/usr/lib/gcc/aarch64-linux-gnu/7/../../../../lib -L/lib/aarch64-linux-gnu -L/lib/../lib -L/usr/lib/aarch64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/aarch64-linux-gnu/7/../../.. CMakeFiles/cmTC_e261c.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/aarch64-linux-gnu/7/crtendS.o /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_e261c' '-mlittle-endian' '-mabi=lp64'
+make[1]: Leaving directory '/home/ubuntu/GeoMath/build/CMakeFiles/CMakeTmp'
 
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/bird/GeoMath/build/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/ubuntu/GeoMath/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_0eba5/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_0eba5.dir/build.make CMakeFiles/cmTC_0eba5.dir/build]
-  ignore line: [make[1]: Entering directory '/home/bird/GeoMath/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_0eba5.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTC_0eba5.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTC_0eba5]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0eba5.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc     -v CMakeFiles/cmTC_0eba5.dir/CMakeCCompilerABI.c.o  -o cmTC_0eba5 ]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_e261c/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_e261c.dir/build.make CMakeFiles/cmTC_e261c.dir/build]
+  ignore line: [make[1]: Entering directory '/home/ubuntu/GeoMath/build/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_e261c.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTC_e261c.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_e261c]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e261c.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc     -v CMakeFiles/cmTC_e261c.dir/CMakeCCompilerABI.c.o  -o cmTC_e261c ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/aarch64-linux-gnu/7/lto-wrapper]
@@ -86,13 +86,13 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 7.4.0 (Ubuntu/Linaro 7.4.0-1ubuntu1~18.04.1) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/aarch64-linux-gnu/7/:/usr/lib/gcc/aarch64-linux-gnu/7/:/usr/lib/gcc/aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/7/:/usr/lib/gcc/aarch64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/aarch64-linux-gnu/7/:/usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/7/../../../../lib/:/lib/aarch64-linux-gnu/:/lib/../lib/:/usr/lib/aarch64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/aarch64-linux-gnu/7/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_0eba5' '-mlittle-endian' '-mabi=lp64']
-  link line: [ /usr/lib/gcc/aarch64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/aarch64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/aarch64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccf5MGHQ.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr --hash-style=gnu --as-needed -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux --fix-cortex-a53-843419 -pie -z now -z relro -o cmTC_0eba5 /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/Scrt1.o /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/crti.o /usr/lib/gcc/aarch64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/aarch64-linux-gnu/7 -L/usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu -L/usr/lib/gcc/aarch64-linux-gnu/7/../../../../lib -L/lib/aarch64-linux-gnu -L/lib/../lib -L/usr/lib/aarch64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/aarch64-linux-gnu/7/../../.. CMakeFiles/cmTC_0eba5.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/aarch64-linux-gnu/7/crtendS.o /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_e261c' '-mlittle-endian' '-mabi=lp64']
+  link line: [ /usr/lib/gcc/aarch64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/aarch64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/aarch64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/cckvt86x.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr --hash-style=gnu --as-needed -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux --fix-cortex-a53-843419 -pie -z now -z relro -o cmTC_e261c /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/Scrt1.o /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/crti.o /usr/lib/gcc/aarch64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/aarch64-linux-gnu/7 -L/usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu -L/usr/lib/gcc/aarch64-linux-gnu/7/../../../../lib -L/lib/aarch64-linux-gnu -L/lib/../lib -L/usr/lib/aarch64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/aarch64-linux-gnu/7/../../.. CMakeFiles/cmTC_e261c.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/aarch64-linux-gnu/7/crtendS.o /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/aarch64-linux-gnu/7/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/aarch64-linux-gnu/7/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/aarch64-linux-gnu/7/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccf5MGHQ.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cckvt86x.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -113,7 +113,7 @@ Parsed C implicit link information from above output:
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_0eba5] ==> ignore
+    arg [cmTC_e261c] ==> ignore
     arg [/usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/aarch64-linux-gnu/7/crtbeginS.o] ==> ignore
@@ -125,7 +125,7 @@ Parsed C implicit link information from above output:
     arg [-L/usr/lib/aarch64-linux-gnu] ==> dir [/usr/lib/aarch64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/aarch64-linux-gnu/7/../../..] ==> dir [/usr/lib/gcc/aarch64-linux-gnu/7/../../..]
-    arg [CMakeFiles/cmTC_0eba5.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_e261c.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--push-state] ==> ignore
     arg [--as-needed] ==> ignore
@@ -155,17 +155,17 @@ Parsed C implicit link information from above output:
 
 
 Detecting C [-std=c11] compiler features compiled with the following output:
-Change Dir: /home/bird/GeoMath/build/CMakeFiles/CMakeTmp
+Change Dir: /home/ubuntu/GeoMath/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_fa7bd/fast"
-/usr/bin/make -f CMakeFiles/cmTC_fa7bd.dir/build.make CMakeFiles/cmTC_fa7bd.dir/build
-make[1]: Entering directory '/home/bird/GeoMath/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_fa7bd.dir/feature_tests.c.o
-/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_fa7bd.dir/feature_tests.c.o   -c /home/bird/GeoMath/build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_fa7bd
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fa7bd.dir/link.txt --verbose=1
-/usr/bin/cc      CMakeFiles/cmTC_fa7bd.dir/feature_tests.c.o  -o cmTC_fa7bd 
-make[1]: Leaving directory '/home/bird/GeoMath/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_32310/fast"
+/usr/bin/make -f CMakeFiles/cmTC_32310.dir/build.make CMakeFiles/cmTC_32310.dir/build
+make[1]: Entering directory '/home/ubuntu/GeoMath/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_32310.dir/feature_tests.c.o
+/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_32310.dir/feature_tests.c.o   -c /home/ubuntu/GeoMath/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_32310
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_32310.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_32310.dir/feature_tests.c.o  -o cmTC_32310 
+make[1]: Leaving directory '/home/ubuntu/GeoMath/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -175,17 +175,17 @@ make[1]: Leaving directory '/home/bird/GeoMath/build/CMakeFiles/CMakeTmp'
 
 
 Detecting C [-std=c99] compiler features compiled with the following output:
-Change Dir: /home/bird/GeoMath/build/CMakeFiles/CMakeTmp
+Change Dir: /home/ubuntu/GeoMath/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_67ef4/fast"
-/usr/bin/make -f CMakeFiles/cmTC_67ef4.dir/build.make CMakeFiles/cmTC_67ef4.dir/build
-make[1]: Entering directory '/home/bird/GeoMath/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_67ef4.dir/feature_tests.c.o
-/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_67ef4.dir/feature_tests.c.o   -c /home/bird/GeoMath/build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_67ef4
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_67ef4.dir/link.txt --verbose=1
-/usr/bin/cc      CMakeFiles/cmTC_67ef4.dir/feature_tests.c.o  -o cmTC_67ef4 
-make[1]: Leaving directory '/home/bird/GeoMath/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_43171/fast"
+/usr/bin/make -f CMakeFiles/cmTC_43171.dir/build.make CMakeFiles/cmTC_43171.dir/build
+make[1]: Entering directory '/home/ubuntu/GeoMath/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_43171.dir/feature_tests.c.o
+/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_43171.dir/feature_tests.c.o   -c /home/ubuntu/GeoMath/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_43171
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_43171.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_43171.dir/feature_tests.c.o  -o cmTC_43171 
+make[1]: Leaving directory '/home/ubuntu/GeoMath/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -195,17 +195,17 @@ make[1]: Leaving directory '/home/bird/GeoMath/build/CMakeFiles/CMakeTmp'
 
 
 Detecting C [-std=c90] compiler features compiled with the following output:
-Change Dir: /home/bird/GeoMath/build/CMakeFiles/CMakeTmp
+Change Dir: /home/ubuntu/GeoMath/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_f76a7/fast"
-/usr/bin/make -f CMakeFiles/cmTC_f76a7.dir/build.make CMakeFiles/cmTC_f76a7.dir/build
-make[1]: Entering directory '/home/bird/GeoMath/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_f76a7.dir/feature_tests.c.o
-/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_f76a7.dir/feature_tests.c.o   -c /home/bird/GeoMath/build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_f76a7
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f76a7.dir/link.txt --verbose=1
-/usr/bin/cc      CMakeFiles/cmTC_f76a7.dir/feature_tests.c.o  -o cmTC_f76a7 
-make[1]: Leaving directory '/home/bird/GeoMath/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_6e653/fast"
+/usr/bin/make -f CMakeFiles/cmTC_6e653.dir/build.make CMakeFiles/cmTC_6e653.dir/build
+make[1]: Entering directory '/home/ubuntu/GeoMath/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6e653.dir/feature_tests.c.o
+/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_6e653.dir/feature_tests.c.o   -c /home/ubuntu/GeoMath/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_6e653
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6e653.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_6e653.dir/feature_tests.c.o  -o cmTC_6e653 
+make[1]: Leaving directory '/home/ubuntu/GeoMath/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -213,30 +213,30 @@ make[1]: Leaving directory '/home/bird/GeoMath/build/CMakeFiles/CMakeTmp'
     Feature record: C_FEATURE:0c_static_assert
     Feature record: C_FEATURE:0c_variadic_macros
 Determining if the CXX compiler works passed with the following output:
-Change Dir: /home/bird/GeoMath/build/CMakeFiles/CMakeTmp
+Change Dir: /home/ubuntu/GeoMath/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_3e9da/fast"
-/usr/bin/make -f CMakeFiles/cmTC_3e9da.dir/build.make CMakeFiles/cmTC_3e9da.dir/build
-make[1]: Entering directory '/home/bird/GeoMath/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_3e9da.dir/testCXXCompiler.cxx.o
-/usr/bin/c++     -o CMakeFiles/cmTC_3e9da.dir/testCXXCompiler.cxx.o -c /home/bird/GeoMath/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_3e9da
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3e9da.dir/link.txt --verbose=1
-/usr/bin/c++       CMakeFiles/cmTC_3e9da.dir/testCXXCompiler.cxx.o  -o cmTC_3e9da 
-make[1]: Leaving directory '/home/bird/GeoMath/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_3d5db/fast"
+/usr/bin/make -f CMakeFiles/cmTC_3d5db.dir/build.make CMakeFiles/cmTC_3d5db.dir/build
+make[1]: Entering directory '/home/ubuntu/GeoMath/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_3d5db.dir/testCXXCompiler.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTC_3d5db.dir/testCXXCompiler.cxx.o -c /home/ubuntu/GeoMath/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_3d5db
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3d5db.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_3d5db.dir/testCXXCompiler.cxx.o  -o cmTC_3d5db 
+make[1]: Leaving directory '/home/ubuntu/GeoMath/build/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: /home/bird/GeoMath/build/CMakeFiles/CMakeTmp
+Change Dir: /home/ubuntu/GeoMath/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_6edb9/fast"
-/usr/bin/make -f CMakeFiles/cmTC_6edb9.dir/build.make CMakeFiles/cmTC_6edb9.dir/build
-make[1]: Entering directory '/home/bird/GeoMath/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_6edb9.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++     -o CMakeFiles/cmTC_6edb9.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_6edb9
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6edb9.dir/link.txt --verbose=1
-/usr/bin/c++      -v CMakeFiles/cmTC_6edb9.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_6edb9 
+Run Build Command:"/usr/bin/make" "cmTC_181fb/fast"
+/usr/bin/make -f CMakeFiles/cmTC_181fb.dir/build.make CMakeFiles/cmTC_181fb.dir/build
+make[1]: Entering directory '/home/ubuntu/GeoMath/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_181fb.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++     -o CMakeFiles/cmTC_181fb.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_181fb
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_181fb.dir/link.txt --verbose=1
+/usr/bin/c++      -v CMakeFiles/cmTC_181fb.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_181fb 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/aarch64-linux-gnu/7/lto-wrapper
@@ -246,24 +246,24 @@ Thread model: posix
 gcc version 7.4.0 (Ubuntu/Linaro 7.4.0-1ubuntu1~18.04.1) 
 COMPILER_PATH=/usr/lib/gcc/aarch64-linux-gnu/7/:/usr/lib/gcc/aarch64-linux-gnu/7/:/usr/lib/gcc/aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/7/:/usr/lib/gcc/aarch64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/aarch64-linux-gnu/7/:/usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/7/../../../../lib/:/lib/aarch64-linux-gnu/:/lib/../lib/:/usr/lib/aarch64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/aarch64-linux-gnu/7/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_6edb9' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64'
- /usr/lib/gcc/aarch64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/aarch64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/aarch64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccDe7Dg8.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr --hash-style=gnu --as-needed -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux --fix-cortex-a53-843419 -pie -z now -z relro -o cmTC_6edb9 /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/Scrt1.o /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/crti.o /usr/lib/gcc/aarch64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/aarch64-linux-gnu/7 -L/usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu -L/usr/lib/gcc/aarch64-linux-gnu/7/../../../../lib -L/lib/aarch64-linux-gnu -L/lib/../lib -L/usr/lib/aarch64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/aarch64-linux-gnu/7/../../.. CMakeFiles/cmTC_6edb9.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/aarch64-linux-gnu/7/crtendS.o /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_6edb9' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64'
-make[1]: Leaving directory '/home/bird/GeoMath/build/CMakeFiles/CMakeTmp'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_181fb' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64'
+ /usr/lib/gcc/aarch64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/aarch64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/aarch64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccRL7DLN.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr --hash-style=gnu --as-needed -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux --fix-cortex-a53-843419 -pie -z now -z relro -o cmTC_181fb /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/Scrt1.o /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/crti.o /usr/lib/gcc/aarch64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/aarch64-linux-gnu/7 -L/usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu -L/usr/lib/gcc/aarch64-linux-gnu/7/../../../../lib -L/lib/aarch64-linux-gnu -L/lib/../lib -L/usr/lib/aarch64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/aarch64-linux-gnu/7/../../.. CMakeFiles/cmTC_181fb.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/aarch64-linux-gnu/7/crtendS.o /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_181fb' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64'
+make[1]: Leaving directory '/home/ubuntu/GeoMath/build/CMakeFiles/CMakeTmp'
 
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/bird/GeoMath/build/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/ubuntu/GeoMath/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_6edb9/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_6edb9.dir/build.make CMakeFiles/cmTC_6edb9.dir/build]
-  ignore line: [make[1]: Entering directory '/home/bird/GeoMath/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_6edb9.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTC_6edb9.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTC_6edb9]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6edb9.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++      -v CMakeFiles/cmTC_6edb9.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_6edb9 ]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_181fb/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_181fb.dir/build.make CMakeFiles/cmTC_181fb.dir/build]
+  ignore line: [make[1]: Entering directory '/home/ubuntu/GeoMath/build/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_181fb.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTC_181fb.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_181fb]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_181fb.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++      -v CMakeFiles/cmTC_181fb.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_181fb ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/aarch64-linux-gnu/7/lto-wrapper]
@@ -273,13 +273,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 7.4.0 (Ubuntu/Linaro 7.4.0-1ubuntu1~18.04.1) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/aarch64-linux-gnu/7/:/usr/lib/gcc/aarch64-linux-gnu/7/:/usr/lib/gcc/aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/7/:/usr/lib/gcc/aarch64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/aarch64-linux-gnu/7/:/usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/7/../../../../lib/:/lib/aarch64-linux-gnu/:/lib/../lib/:/usr/lib/aarch64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/aarch64-linux-gnu/7/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_6edb9' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64']
-  link line: [ /usr/lib/gcc/aarch64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/aarch64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/aarch64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccDe7Dg8.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr --hash-style=gnu --as-needed -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux --fix-cortex-a53-843419 -pie -z now -z relro -o cmTC_6edb9 /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/Scrt1.o /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/crti.o /usr/lib/gcc/aarch64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/aarch64-linux-gnu/7 -L/usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu -L/usr/lib/gcc/aarch64-linux-gnu/7/../../../../lib -L/lib/aarch64-linux-gnu -L/lib/../lib -L/usr/lib/aarch64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/aarch64-linux-gnu/7/../../.. CMakeFiles/cmTC_6edb9.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/aarch64-linux-gnu/7/crtendS.o /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_181fb' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64']
+  link line: [ /usr/lib/gcc/aarch64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/aarch64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/aarch64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccRL7DLN.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr --hash-style=gnu --as-needed -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux --fix-cortex-a53-843419 -pie -z now -z relro -o cmTC_181fb /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/Scrt1.o /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/crti.o /usr/lib/gcc/aarch64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/aarch64-linux-gnu/7 -L/usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu -L/usr/lib/gcc/aarch64-linux-gnu/7/../../../../lib -L/lib/aarch64-linux-gnu -L/lib/../lib -L/usr/lib/aarch64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/aarch64-linux-gnu/7/../../.. CMakeFiles/cmTC_181fb.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/aarch64-linux-gnu/7/crtendS.o /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/aarch64-linux-gnu/7/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/aarch64-linux-gnu/7/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/aarch64-linux-gnu/7/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccDe7Dg8.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccRL7DLN.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -300,7 +300,7 @@ Parsed CXX implicit link information from above output:
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_6edb9] ==> ignore
+    arg [cmTC_181fb] ==> ignore
     arg [/usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/aarch64-linux-gnu/7/crtbeginS.o] ==> ignore
@@ -312,7 +312,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/usr/lib/aarch64-linux-gnu] ==> dir [/usr/lib/aarch64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/aarch64-linux-gnu/7/../../..] ==> dir [/usr/lib/gcc/aarch64-linux-gnu/7/../../..]
-    arg [CMakeFiles/cmTC_6edb9.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_181fb.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -338,17 +338,17 @@ Parsed CXX implicit link information from above output:
 
 
 Detecting CXX [-std=c++1z] compiler features compiled with the following output:
-Change Dir: /home/bird/GeoMath/build/CMakeFiles/CMakeTmp
+Change Dir: /home/ubuntu/GeoMath/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_cb320/fast"
-/usr/bin/make -f CMakeFiles/cmTC_cb320.dir/build.make CMakeFiles/cmTC_cb320.dir/build
-make[1]: Entering directory '/home/bird/GeoMath/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_cb320.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++1z -o CMakeFiles/cmTC_cb320.dir/feature_tests.cxx.o -c /home/bird/GeoMath/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_cb320
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cb320.dir/link.txt --verbose=1
-/usr/bin/c++       CMakeFiles/cmTC_cb320.dir/feature_tests.cxx.o  -o cmTC_cb320 
-make[1]: Leaving directory '/home/bird/GeoMath/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_080db/fast"
+/usr/bin/make -f CMakeFiles/cmTC_080db.dir/build.make CMakeFiles/cmTC_080db.dir/build
+make[1]: Entering directory '/home/ubuntu/GeoMath/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_080db.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++1z -o CMakeFiles/cmTC_080db.dir/feature_tests.cxx.o -c /home/ubuntu/GeoMath/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_080db
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_080db.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_080db.dir/feature_tests.cxx.o  -o cmTC_080db 
+make[1]: Leaving directory '/home/ubuntu/GeoMath/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -411,17 +411,17 @@ make[1]: Leaving directory '/home/bird/GeoMath/build/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
-Change Dir: /home/bird/GeoMath/build/CMakeFiles/CMakeTmp
+Change Dir: /home/ubuntu/GeoMath/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_87b55/fast"
-/usr/bin/make -f CMakeFiles/cmTC_87b55.dir/build.make CMakeFiles/cmTC_87b55.dir/build
-make[1]: Entering directory '/home/bird/GeoMath/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_87b55.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTC_87b55.dir/feature_tests.cxx.o -c /home/bird/GeoMath/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_87b55
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_87b55.dir/link.txt --verbose=1
-/usr/bin/c++       CMakeFiles/cmTC_87b55.dir/feature_tests.cxx.o  -o cmTC_87b55 
-make[1]: Leaving directory '/home/bird/GeoMath/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_775b3/fast"
+/usr/bin/make -f CMakeFiles/cmTC_775b3.dir/build.make CMakeFiles/cmTC_775b3.dir/build
+make[1]: Entering directory '/home/ubuntu/GeoMath/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_775b3.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTC_775b3.dir/feature_tests.cxx.o -c /home/ubuntu/GeoMath/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_775b3
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_775b3.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_775b3.dir/feature_tests.cxx.o  -o cmTC_775b3 
+make[1]: Leaving directory '/home/ubuntu/GeoMath/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -484,17 +484,17 @@ make[1]: Leaving directory '/home/bird/GeoMath/build/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
-Change Dir: /home/bird/GeoMath/build/CMakeFiles/CMakeTmp
+Change Dir: /home/ubuntu/GeoMath/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_00049/fast"
-/usr/bin/make -f CMakeFiles/cmTC_00049.dir/build.make CMakeFiles/cmTC_00049.dir/build
-make[1]: Entering directory '/home/bird/GeoMath/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_00049.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_00049.dir/feature_tests.cxx.o -c /home/bird/GeoMath/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_00049
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_00049.dir/link.txt --verbose=1
-/usr/bin/c++       CMakeFiles/cmTC_00049.dir/feature_tests.cxx.o  -o cmTC_00049 
-make[1]: Leaving directory '/home/bird/GeoMath/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_4b186/fast"
+/usr/bin/make -f CMakeFiles/cmTC_4b186.dir/build.make CMakeFiles/cmTC_4b186.dir/build
+make[1]: Entering directory '/home/ubuntu/GeoMath/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_4b186.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_4b186.dir/feature_tests.cxx.o -c /home/ubuntu/GeoMath/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_4b186
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4b186.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_4b186.dir/feature_tests.cxx.o  -o cmTC_4b186 
+make[1]: Leaving directory '/home/ubuntu/GeoMath/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -557,17 +557,17 @@ make[1]: Leaving directory '/home/bird/GeoMath/build/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
-Change Dir: /home/bird/GeoMath/build/CMakeFiles/CMakeTmp
+Change Dir: /home/ubuntu/GeoMath/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_3b35e/fast"
-/usr/bin/make -f CMakeFiles/cmTC_3b35e.dir/build.make CMakeFiles/cmTC_3b35e.dir/build
-make[1]: Entering directory '/home/bird/GeoMath/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_3b35e.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_3b35e.dir/feature_tests.cxx.o -c /home/bird/GeoMath/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_3b35e
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3b35e.dir/link.txt --verbose=1
-/usr/bin/c++       CMakeFiles/cmTC_3b35e.dir/feature_tests.cxx.o  -o cmTC_3b35e 
-make[1]: Leaving directory '/home/bird/GeoMath/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_54e8b/fast"
+/usr/bin/make -f CMakeFiles/cmTC_54e8b.dir/build.make CMakeFiles/cmTC_54e8b.dir/build
+make[1]: Entering directory '/home/ubuntu/GeoMath/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_54e8b.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_54e8b.dir/feature_tests.cxx.o -c /home/ubuntu/GeoMath/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_54e8b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_54e8b.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_54e8b.dir/feature_tests.cxx.o  -o cmTC_54e8b 
+make[1]: Leaving directory '/home/ubuntu/GeoMath/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers

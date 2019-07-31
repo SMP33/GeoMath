@@ -4,7 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/bird/GeoMath/src/main.cpp" "/home/bird/GeoMath/build/CMakeFiles/GeoMath.dir/src/main.cpp.o"
+  "/home/ubuntu/GeoMath/lib_src/GeoMath.cpp" "/home/ubuntu/GeoMath/build/CMakeFiles/GeoMath.dir/lib_src/GeoMath.cpp.o"
+  "/home/ubuntu/GeoMath/src/main.cpp" "/home/ubuntu/GeoMath/build/CMakeFiles/GeoMath.dir/src/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -12,7 +13,6 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "."
   "../include"
-  "/usr/local/include/GeoMath.h"
   )
 
 # Targets to which this target links.

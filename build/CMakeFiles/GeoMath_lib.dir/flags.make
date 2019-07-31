@@ -6,5 +6,5 @@ CXX_FLAGS =  -std=c++1y -Wall
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/bird/GeoMath/build -I/home/bird/GeoMath/include -I/home/bird/GeoMath/lib_src -I/usr/local/include/GeoMath.h 
+CXX_INCLUDES = -I/home/ubuntu/GeoMath/build -I/home/ubuntu/GeoMath/include -I/home/ubuntu/GeoMath/lib_src 
 

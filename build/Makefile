@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bird/GeoMath
+CMAKE_SOURCE_DIR = /home/ubuntu/GeoMath
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bird/GeoMath/build
+CMAKE_BINARY_DIR = /home/ubuntu/GeoMath/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -126,9 +126,9 @@ install/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bird/GeoMath/build/CMakeFiles /home/bird/GeoMath/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/GeoMath/build/CMakeFiles /home/ubuntu/GeoMath/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bird/GeoMath/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/GeoMath/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -188,6 +188,7 @@ lib_src/GeoMath.o: lib_src/GeoMath.cpp.o
 
 # target to build an object file
 lib_src/GeoMath.cpp.o:
+	$(MAKE) -f CMakeFiles/GeoMath.dir/build.make CMakeFiles/GeoMath.dir/lib_src/GeoMath.cpp.o
 	$(MAKE) -f CMakeFiles/GeoMath_lib.dir/build.make CMakeFiles/GeoMath_lib.dir/lib_src/GeoMath.cpp.o
 .PHONY : lib_src/GeoMath.cpp.o
 
@@ -197,6 +198,7 @@ lib_src/GeoMath.i: lib_src/GeoMath.cpp.i
 
 # target to preprocess a source file
 lib_src/GeoMath.cpp.i:
+	$(MAKE) -f CMakeFiles/GeoMath.dir/build.make CMakeFiles/GeoMath.dir/lib_src/GeoMath.cpp.i
 	$(MAKE) -f CMakeFiles/GeoMath_lib.dir/build.make CMakeFiles/GeoMath_lib.dir/lib_src/GeoMath.cpp.i
 .PHONY : lib_src/GeoMath.cpp.i
 
@@ -206,6 +208,7 @@ lib_src/GeoMath.s: lib_src/GeoMath.cpp.s
 
 # target to generate assembly for a file
 lib_src/GeoMath.cpp.s:
+	$(MAKE) -f CMakeFiles/GeoMath.dir/build.make CMakeFiles/GeoMath.dir/lib_src/GeoMath.cpp.s
 	$(MAKE) -f CMakeFiles/GeoMath_lib.dir/build.make CMakeFiles/GeoMath_lib.dir/lib_src/GeoMath.cpp.s
 .PHONY : lib_src/GeoMath.cpp.s
 

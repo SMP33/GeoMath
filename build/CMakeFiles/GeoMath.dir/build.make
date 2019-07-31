@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bird/GeoMath
+CMAKE_SOURCE_DIR = /home/ubuntu/GeoMath
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bird/GeoMath/build
+CMAKE_BINARY_DIR = /home/ubuntu/GeoMath/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/GeoMath.dir/depend.make
@@ -57,18 +57,42 @@ include CMakeFiles/GeoMath.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/GeoMath.dir/flags.make
 
+CMakeFiles/GeoMath.dir/lib_src/GeoMath.cpp.o: CMakeFiles/GeoMath.dir/flags.make
+CMakeFiles/GeoMath.dir/lib_src/GeoMath.cpp.o: ../lib_src/GeoMath.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/GeoMath/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/GeoMath.dir/lib_src/GeoMath.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GeoMath.dir/lib_src/GeoMath.cpp.o -c /home/ubuntu/GeoMath/lib_src/GeoMath.cpp
+
+CMakeFiles/GeoMath.dir/lib_src/GeoMath.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GeoMath.dir/lib_src/GeoMath.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/GeoMath/lib_src/GeoMath.cpp > CMakeFiles/GeoMath.dir/lib_src/GeoMath.cpp.i
+
+CMakeFiles/GeoMath.dir/lib_src/GeoMath.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GeoMath.dir/lib_src/GeoMath.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/GeoMath/lib_src/GeoMath.cpp -o CMakeFiles/GeoMath.dir/lib_src/GeoMath.cpp.s
+
+CMakeFiles/GeoMath.dir/lib_src/GeoMath.cpp.o.requires:
+
+.PHONY : CMakeFiles/GeoMath.dir/lib_src/GeoMath.cpp.o.requires
+
+CMakeFiles/GeoMath.dir/lib_src/GeoMath.cpp.o.provides: CMakeFiles/GeoMath.dir/lib_src/GeoMath.cpp.o.requires
+	$(MAKE) -f CMakeFiles/GeoMath.dir/build.make CMakeFiles/GeoMath.dir/lib_src/GeoMath.cpp.o.provides.build
+.PHONY : CMakeFiles/GeoMath.dir/lib_src/GeoMath.cpp.o.provides
+
+CMakeFiles/GeoMath.dir/lib_src/GeoMath.cpp.o.provides.build: CMakeFiles/GeoMath.dir/lib_src/GeoMath.cpp.o
+
+
 CMakeFiles/GeoMath.dir/src/main.cpp.o: CMakeFiles/GeoMath.dir/flags.make
 CMakeFiles/GeoMath.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bird/GeoMath/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/GeoMath.dir/src/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GeoMath.dir/src/main.cpp.o -c /home/bird/GeoMath/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/GeoMath/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/GeoMath.dir/src/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GeoMath.dir/src/main.cpp.o -c /home/ubuntu/GeoMath/src/main.cpp
 
 CMakeFiles/GeoMath.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GeoMath.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bird/GeoMath/src/main.cpp > CMakeFiles/GeoMath.dir/src/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/GeoMath/src/main.cpp > CMakeFiles/GeoMath.dir/src/main.cpp.i
 
 CMakeFiles/GeoMath.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GeoMath.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bird/GeoMath/src/main.cpp -o CMakeFiles/GeoMath.dir/src/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/GeoMath/src/main.cpp -o CMakeFiles/GeoMath.dir/src/main.cpp.s
 
 CMakeFiles/GeoMath.dir/src/main.cpp.o.requires:
 
@@ -83,16 +107,17 @@ CMakeFiles/GeoMath.dir/src/main.cpp.o.provides.build: CMakeFiles/GeoMath.dir/src
 
 # Object files for target GeoMath
 GeoMath_OBJECTS = \
+"CMakeFiles/GeoMath.dir/lib_src/GeoMath.cpp.o" \
 "CMakeFiles/GeoMath.dir/src/main.cpp.o"
 
 # External object files for target GeoMath
 GeoMath_EXTERNAL_OBJECTS =
 
+GeoMath: CMakeFiles/GeoMath.dir/lib_src/GeoMath.cpp.o
 GeoMath: CMakeFiles/GeoMath.dir/src/main.cpp.o
 GeoMath: CMakeFiles/GeoMath.dir/build.make
-GeoMath: /usr/local/lib/libGeoMath_lib.a
 GeoMath: CMakeFiles/GeoMath.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/bird/GeoMath/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable GeoMath"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/GeoMath/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable GeoMath"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/GeoMath.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -100,6 +125,7 @@ CMakeFiles/GeoMath.dir/build: GeoMath
 
 .PHONY : CMakeFiles/GeoMath.dir/build
 
+CMakeFiles/GeoMath.dir/requires: CMakeFiles/GeoMath.dir/lib_src/GeoMath.cpp.o.requires
 CMakeFiles/GeoMath.dir/requires: CMakeFiles/GeoMath.dir/src/main.cpp.o.requires
 
 .PHONY : CMakeFiles/GeoMath.dir/requires
@@ -109,6 +135,6 @@ CMakeFiles/GeoMath.dir/clean:
 .PHONY : CMakeFiles/GeoMath.dir/clean
 
 CMakeFiles/GeoMath.dir/depend:
-	cd /home/bird/GeoMath/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bird/GeoMath /home/bird/GeoMath /home/bird/GeoMath/build /home/bird/GeoMath/build /home/bird/GeoMath/build/CMakeFiles/GeoMath.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ubuntu/GeoMath/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/GeoMath /home/ubuntu/GeoMath /home/ubuntu/GeoMath/build /home/ubuntu/GeoMath/build /home/ubuntu/GeoMath/build/CMakeFiles/GeoMath.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/GeoMath.dir/depend
 

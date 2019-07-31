@@ -35,11 +35,8 @@ install(FILES build/lib${PROJECT_NAME}_lib.a DESTINATION lib)
 
 #------------------- Create an executable --------------------------------------
 file(GLOB 
-          CPP_SOURCES "src/*.cpp")
+          CPP_SOURCES "lib_src/*.cpp" "src/*.cpp")
 
 add_executable(${PROJECT_NAME} ${CPP_SOURCES})
 
-find_package(GeoMath REQUIRED)
-include_directories(${GeoMath_INCLUDE_DIRS})
 
-target_link_libraries(${PROJECT_NAME} ../build)
