@@ -1,8 +1,0 @@
-/home/bird/GeoMath/VisualGDB/Debug/CMakeFiles/install/strip.dir
-/home/bird/GeoMath/VisualGDB/Debug/CMakeFiles/install/local.dir
-/home/bird/GeoMath/VisualGDB/Debug/CMakeFiles/GeoMath.dir
-/home/bird/GeoMath/VisualGDB/Debug/CMakeFiles/GeoMath_lib.dir
-/home/bird/GeoMath/VisualGDB/Debug/CMakeFiles/edit_cache.dir
-/home/bird/GeoMath/VisualGDB/Debug/CMakeFiles/rebuild_cache.dir
-/home/bird/GeoMath/VisualGDB/Debug/CMakeFiles/list_install_components.dir
-/home/bird/GeoMath/VisualGDB/Debug/CMakeFiles/install.dir
