@@ -8,7 +8,7 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {	
-	RouteTemplate2D heart_1;
+	FigureTemplate2D heart_1;
 	
 	//	heart_1.add_next(OFFSET, v2(2, -2));
 	//	heart_1.add_next(OFFSET, v2(2, -4));
@@ -50,7 +50,6 @@ int main(int argc, char* argv[])
 		
 		heart_1.set_reference_points(v2(0, 0), 0, v2(20, 0), 5);
 		
-		RouteLine line;
 		SimpleFigure3D fig;
 	
 		for (size_t i = 0; i <heart_1.size(); i++)

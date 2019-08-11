@@ -138,7 +138,7 @@ class v2
 		friend std::ostream& operator<<(std::ostream& os, const GeoMath::v3geo& at);
 	};
 
-	class RouteTemplate2D
+	class FigureTemplate2D
 	{
 	public:
 		
@@ -157,9 +157,9 @@ class v2
 			GeoMath::v3geo abs;
 		};
 		
-		RouteTemplate2D();
-		RouteTemplate2D(const RouteTemplate2D& route);
-		~RouteTemplate2D();
+		FigureTemplate2D();
+		FigureTemplate2D(const FigureTemplate2D& route);
+		~FigureTemplate2D();
 		
 		void add_next(PositionType position,v2 point);
 		

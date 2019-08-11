@@ -421,12 +421,12 @@ bool GeoMath::v3geo::operator ==(v3geo const& p2)
 	return (p1.lat == p2.lng&&p1.lng == p2.lat&&p1.alt == p2.alt);
 }
 
-GeoMath::RouteTemplate2D::RouteTemplate2D():
+GeoMath::FigureTemplate2D::FigureTemplate2D():
 	reference_point_1_abs(0,0,0),
 	reference_point_2_abs(0,0,0),
 	reference_point_1_meters(0,0,0),
 	reference_point_2_meters(0,0,0),
-	state(GeoMath::RouteTemplate2D::NOT_SELECT),
+	state(GeoMath::FigureTemplate2D::NOT_SELECT),
 	home_abs(0,0,0),
 	home_meters(0,0),
 	point_offset(1),
@@ -438,12 +438,12 @@ GeoMath::RouteTemplate2D::RouteTemplate2D():
 	point_home[0] = GeoMath::v2(0, 0);
 }
 
-GeoMath::RouteTemplate2D::RouteTemplate2D(const RouteTemplate2D& route):
+GeoMath::FigureTemplate2D::FigureTemplate2D(const FigureTemplate2D& route):
 	reference_point_1_abs(0,0,0),
 	reference_point_2_abs(0,0,0),
 	reference_point_1_meters(0,0,0),
 	reference_point_2_meters(0,0,0),
-	state(GeoMath::RouteTemplate2D::NOT_SELECT),
+	state(GeoMath::FigureTemplate2D::NOT_SELECT),
 	home_abs(0,0,0),
 	home_meters(0,0),
 	point_offset(route.point_offset),
@@ -453,7 +453,7 @@ GeoMath::RouteTemplate2D::RouteTemplate2D(const RouteTemplate2D& route):
 {
 }
 
-void GeoMath::RouteTemplate2D::add_next(PositionType position_type, v2 point)
+void GeoMath::FigureTemplate2D::add_next(PositionType position_type, v2 point)
 {
 	v2 home;
 	v2 offset;
@@ -478,7 +478,7 @@ void GeoMath::RouteTemplate2D::add_next(PositionType position_type, v2 point)
 	point_offset.push_back(offset);
 }
 
-GeoMath::RouteTemplate2D::Position GeoMath::RouteTemplate2D::at(int i)
+GeoMath::FigureTemplate2D::Position GeoMath::FigureTemplate2D::at(int i)
 {
 	Position pos;
 	
@@ -488,7 +488,7 @@ GeoMath::RouteTemplate2D::Position GeoMath::RouteTemplate2D::at(int i)
 	pos.offset = point_offset[i];
 	pos.offset = pos.offset.rotateXY(course)*scale;
 	
-	if (state == GeoMath::RouteTemplate2D::ABSOLUT)
+	if (state == GeoMath::FigureTemplate2D::ABSOLUT)
 		pos.abs = home_abs + pos.home;
 	else
 		pos.abs = v3geo(0, 0, 0);
@@ -496,12 +496,12 @@ GeoMath::RouteTemplate2D::Position GeoMath::RouteTemplate2D::at(int i)
 	return pos;
 }
 
-GeoMath::RouteTemplate2D::Position GeoMath::RouteTemplate2D::operator[](const int i)
+GeoMath::FigureTemplate2D::Position GeoMath::FigureTemplate2D::operator[](const int i)
 {
 	return at(i);
 }
 
-int GeoMath::RouteTemplate2D::size()
+int GeoMath::FigureTemplate2D::size()
 {
 	return point_home.size();
 }
@@ -512,13 +512,13 @@ int GeoMath::SimpleFigure3D::size()
 }
 
 
-GeoMath::RouteTemplate2D::~RouteTemplate2D()
+GeoMath::FigureTemplate2D::~FigureTemplate2D()
 {
 }
 
-bool GeoMath::RouteTemplate2D::set_reference_points(v3geo abs1, int index_1, v3geo abs2, int index_2)
+bool GeoMath::FigureTemplate2D::set_reference_points(v3geo abs1, int index_1, v3geo abs2, int index_2)
 {
-	if (state != GeoMath::RouteTemplate2D::NOT_SELECT)
+	if (state != GeoMath::FigureTemplate2D::NOT_SELECT)
 		return false;
 	
 	int size = this->size();
@@ -543,13 +543,13 @@ bool GeoMath::RouteTemplate2D::set_reference_points(v3geo abs1, int index_1, v3g
 	
 	home_abs = abs1 +(p1.rotateXY(course)*scale*(-1));
 	
-	state = GeoMath::RouteTemplate2D::ABSOLUT;
+	state = GeoMath::FigureTemplate2D::ABSOLUT;
 	return true;
 }
 
-bool GeoMath::RouteTemplate2D::set_reference_points(v2 r1, int index_1, v2 r2, int index_2)
+bool GeoMath::FigureTemplate2D::set_reference_points(v2 r1, int index_1, v2 r2, int index_2)
 {
-	if (state != GeoMath::RouteTemplate2D::NOT_SELECT)
+	if (state != GeoMath::FigureTemplate2D::NOT_SELECT)
 		return false;
 	
 	int size = this->size();
@@ -574,11 +574,11 @@ bool GeoMath::RouteTemplate2D::set_reference_points(v2 r1, int index_1, v2 r2, i
 	
 	home_meters = r1 + (p1.rotateXY(course)*scale*(-1));
 	
-	state = GeoMath::RouteTemplate2D::METERS;
+	state = GeoMath::FigureTemplate2D::METERS;
 	return true;
 }
 
-GeoMath::v2 GeoMath::RouteTemplate2D::get_home_meters()
+GeoMath::v2 GeoMath::FigureTemplate2D::get_home_meters()
 {
 	return home_meters;
 }
