@@ -7,14 +7,11 @@
 #include <algorithm>
 
 
-
-
-namespace GeoMath
-{
-
 ///Возвращает 1, если число >=0, иначе -1
 double sign(double arg);
 
+namespace GeoMath
+{
 	/*!
 	@brief Объявление используемых констант
 	*/
