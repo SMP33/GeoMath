@@ -1,8 +1,6 @@
 #include "GeoMath.h"
 
-/*!
-@brief возвращает 1, если число >=0, иначе -1
- */
+
 double
 sign(double arg)
 {
