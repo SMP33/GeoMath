@@ -421,65 +421,6 @@ bool GeoMath::v3geo::operator ==(v3geo const& p2)
 	return (p1.lat == p2.lng&&p1.lng == p2.lat&&p1.alt == p2.alt);
 }
 
-GeoMath::RouteLine::RouteLine()
-	:points(1)
-{
-	points[0] = v3(0, 0, 0);
-}
-
-bool 
-GeoMath::RouteLine::add_next(v3 point, PositionType position_type)
-{
-	switch (position_type)
-	{
-	case PositionType::HOME:
-		points.push_back(point);
-		break;
-
-	case PositionType::OFFSET:
-		points.push_back(points.back() + point);
-		break;
-	}
-	return true;
-}
-
-GeoMath::v3 GeoMath::RouteLine::at(unsigned long i, PositionType notion)
-{
-	return points[i];
-}
-
-std::vector<GeoMath::v3> GeoMath::RouteLine::get_points()
-{
-	return std::vector<GeoMath::v3>(points);
-}
-
-bool GeoMath::RouteLine::rotate(double rad, Axis axis, Hand hand)
-{
-	for (std::size_t i = 0; i < points.size(); i++)
-	{
-		points[i]=points[i].rotate(rad, axis, hand);
-	}
-	return true;
-}
-
-std::vector<GeoMath::v3geo> GeoMath::RouteLine::absPosition(v3geo home)
-{
-	std::size_t size = points.size();
-	std::vector<GeoMath::v3geo> res(size);
-
-	for (std::size_t i = 0; i < size; i++)
-	{
-		res[i] = home + points[i];
-	}
-
-	return res;
-}
-
-GeoMath::RouteLine::~RouteLine()
-{
-}
-
-
 GeoMath::RouteTemplate2D::RouteTemplate2D():
 	reference_point_1_abs(0,0,0),
 	reference_point_2_abs(0,0,0),

@@ -219,40 +219,5 @@ class v2
 		std::vector<GeoMath::v3> point_offset;
 		std::vector<GeoMath::v3> point_home;
 	};
-
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	class RouteLine
-	{
-	public:
-		enum PositionType
-		{
-			HOME,
-			OFFSET
-		};
-		
-		std::vector<v3> points;//points in Centre notion
-		bool add_next(v3 point, PositionType notion);
-		v3 at(unsigned long i, PositionType notion);
-		std::vector<v3> get_points();
-		bool rotate(double rad, Axis axis, Hand hand = RIGHT);
-		std::vector<v3geo> absPosition(v3geo home);
-		RouteLine();
-		~RouteLine();
-
-	private:
-
-	};
 }
 
