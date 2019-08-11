@@ -254,20 +254,5 @@ class v2
 	private:
 
 	};
-
-	
-
-
-
-
-
-	std::vector<v3geo>
-		absPosListGeo(v3geo  point, std::vector<v3> list, double course);
-
-	std::vector<v3>
-		absPosList(std::vector<v3> list,
-			double          course,
-			v3              point = GeoMath::v3(0, 0, 0));
-
 }
 

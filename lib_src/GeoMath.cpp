@@ -421,43 +421,6 @@ bool GeoMath::v3geo::operator ==(v3geo const& p2)
 	return (p1.lat == p2.lng&&p1.lng == p2.lat&&p1.alt == p2.alt);
 }
 
-
-std::vector<GeoMath::v3geo>
-GeoMath::absPosListGeo(GeoMath::v3geo           point,
-	std::vector<GeoMath::v3> list,
-	double                   course)
-{
-	std::size_t                      size = list.size();
-	std::vector<GeoMath::v3geo> res(size);
-	for (std::size_t i = 0; i < size; i++)
-	{
-		res[i] = point;
-		for (std::size_t j = 0; j <= i; j++)
-		{
-			res[i] = res[i] + list[j];
-		}
-	}
-	return res;
-}
-
-std::vector<GeoMath::v3>
-GeoMath::absPosList(std::vector<GeoMath::v3> list,
-	double                   course,
-	GeoMath::v3              point)
-{
-	std::size_t                 size = list.size();
-	std::vector<GeoMath::v3> res(size);
-	for (std::size_t i = 0; i < size; i++)
-	{
-		res[i] = point;
-		for (std::size_t j = 0; j <= i; j++)
-		{
-			res[i] = res[i] + list[j];
-		}
-	}
-	return res;
-}
-
 GeoMath::RouteLine::RouteLine()
 	:points(1)
 {
