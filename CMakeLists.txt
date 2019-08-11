@@ -14,11 +14,8 @@ include_directories("${PROJECT_SOURCE_DIR}/include")
 #-------------------- Create a library -----------------------------------------
 #Generate the shared library from the library sources
 #-------------------------------------------------------------------------------
-file(GLOB 
-          LIB_SOURCES "lib_src/*.cpp" "modules/*.cpp")
-
 add_library(${PROJECT_NAME}_lib STATIC 
-            LIB_SOURCES
+            lib_src/GeoMath.cpp
           )
 
 target_include_directories(${PROJECT_NAME}_lib
@@ -31,7 +28,7 @@ target_include_directories(${PROJECT_NAME}_lib
 # link the new library target with the binary target
 
 
-install(FILES lib_src/GeoMath.h DESTINATION include/GeoMath)
+install(FILES lib_src/GeoMath.h DESTINATION include)
 install(FILES GeoMathConfig.cmake DESTINATION lib/cmake/GeoMath)
 
 install(FILES build/lib${PROJECT_NAME}_lib.a DESTINATION lib)

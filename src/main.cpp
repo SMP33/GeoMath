@@ -8,7 +8,7 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {	
-	FigureTemplate2D heart_1;
+	RouteTemplate2D heart_1;
 	
 	//	heart_1.add_next(OFFSET, v2(2, -2));
 	//	heart_1.add_next(OFFSET, v2(2, -4));
