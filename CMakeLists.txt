@@ -14,8 +14,11 @@ include_directories("${PROJECT_SOURCE_DIR}/include")
 #-------------------- Create a library -----------------------------------------
 #Generate the shared library from the library sources
 #-------------------------------------------------------------------------------
+file(GLOB 
+          LIB_SOURCES "lib_src/*.cpp" "modules/*.cpp")
+
 add_library(${PROJECT_NAME}_lib STATIC 
-            lib_src/GeoMath.cpp
+            LIB_SOURCES
           )
 
 target_include_directories(${PROJECT_NAME}_lib
