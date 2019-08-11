@@ -18,7 +18,7 @@ if(NOT WIN32)
   set(BoldWhite   "${Esc}[1;37m")
 endif()
 
-set(GeoMath_INCLUDE_DIRS "/usr/local/include/GeoMath.h")
+set(GeoMath_INCLUDE_DIRS "/usr/local/include/GeoMath")
 set(GeoMath_LIBRARY "/usr/local/lib/libGeoMath_lib.a")
 set(GeoMath_LIBS "/usr/local/lib/libGeoMath_lib.a")
 

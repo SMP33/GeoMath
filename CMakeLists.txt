@@ -28,7 +28,7 @@ target_include_directories(${PROJECT_NAME}_lib
 # link the new library target with the binary target
 
 
-install(FILES lib_src/GeoMath.h DESTINATION include)
+install(FILES lib_src/GeoMath.h DESTINATION include/GeoMath)
 install(FILES GeoMathConfig.cmake DESTINATION lib/cmake/GeoMath)
 
 install(FILES build/lib${PROJECT_NAME}_lib.a DESTINATION lib)
