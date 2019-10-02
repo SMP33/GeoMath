@@ -17,45 +17,48 @@ namespace GeoMath
 	*/
 	static  struct
 	{
-		const double Pi = 3.1415926535897932384626433832795; ///< число Пи
+		const double Pi = 3.1415926535897932384626433832795;    ///< число Пи
 
-		const double E_EARTH = 6378137.0;	///< Экваториальный радиус Земли
-		const double P_EARTH = 6356779.0;	///< Полярный радиус Земли
+		const double E_EARTH = 6378137.0;   	///< Экваториальный радиус Земли
+		const double P_EARTH = 6356779.0;   	///< Полярный радиус Земли
 
-		const double E_length = E_EARTH * 2 * Pi;	///< Удвоенная длина меридиана
-		const double P_length = P_EARTH * 2 * Pi;	///< Длина экватора
+		const double E_length = E_EARTH * 2 * Pi;   	///< Удвоенная длина меридиана
+		const double P_length = P_EARTH * 2 * Pi;   	///< Длина экватора
 
-		const double M_IN_LAT = P_length / 360;	///< Число метров в одном градусе широты
-		const double M_IN_LNG = E_length / 360;	///< Число метров в одном градусе долготы
+		const double M_IN_LAT = P_length / 360;   	///< Число метров в одном градусе широты
+		const double M_IN_LNG = E_length / 360;   	///< Число метров в одном градусе долготы
 
-		const double DEG2RAD = 0.01745329252;	///< Коэффициент преобразования градусов в радианы
-		const double RAD2DEG = 57.2957795129;	///< Коэффициент преобразования градиан в градусы
+		const double DEG2RAD = 0.01745329252;   	///< Коэффициент преобразования градусов в радианы
+		const double RAD2DEG = 57.2957795129;   	///< Коэффициент преобразования градиан в градусы
 	} CONST;
 
 	/// Оси
 	enum Axis
 	{
-		X,	///< Направление с Юга на Север
-		Y,	///< Направление с Запада на Восток
+		X,   	///< Направление с Юга на Север
+		Y,   	///< Направление с Запада на Восток
 		Z	///< Направление вверх
-	};
+	}
+	;
 
 	
 	/// Вращение задается по правилу правой руки, либо по правилу левой руки
 	enum Hand
 	{
-		LEFT,	///< По правилу левой руки
+		LEFT,   	///< По правилу левой руки
 		RIGHT	///< По правилу правой руки
-	};
+	}
+	;
 	
 	enum PositionType ///< Указывает, как именно задано смещение либо положение
 	{
-		OFFSET, ///< Указывает, что положение задано относительно предыдущей точки
-		HOME	///< Указывает, что положение задано относительно домашней точки
+		OFFSET,
+		///< Указывает, что положение задано относительно предыдущей точки
+	  HOME	///< Указывает, что положение задано относительно домашней точки
 	};
 
-/// Двумерный вектор
-class v2
+	/// Двумерный вектор
+	class v2
 	{
 	public:
 		double x;
@@ -65,6 +68,7 @@ class v2
 
 		bool isNull();
 		double	length_xy();
+		double	length();
 		double angle_xy(v2 v);
 
 		v2 normalize_xy(double abs);
@@ -79,7 +83,8 @@ class v2
 		
 		friend std::ostream& operator<<(std::ostream& os, const GeoMath::v2& at);
 
-	};
+	}
+	;
 	
 	class v3
 	{
@@ -94,13 +99,14 @@ class v2
 		bool isNull();
 		double	length_xy();
 		double	length_xyz();
+		double	length();
 		double angle_xy(v3 v);
 
 		v3 normalize_xy(double abs);
 		v3 normalize_xyz(double abs);
 		v3 rotateXY(double rad);
 
-		v3 rotate(double rad, Axis axis,Hand hand=RIGHT);
+		v3 rotate(double rad, Axis axis, Hand hand = RIGHT);
 		v3 rotate(double rad, Axis axis, v3 from_point, Hand hand = RIGHT);
 
 		v3 operator+(v3 const& v2);
@@ -115,7 +121,22 @@ class v2
 	};
 
 	
-	
+	class v2geo
+	{
+	public:
+		double lat;
+		double lng;
+		
+		bool isNull();
+		
+		v2geo(double lat_ = 0, double lng_ = 0);
+
+		v2 operator-(v2geo const& p2);
+		v2geo operator+(v2 const& p2);
+		bool operator ==(v2geo const& p2);
+		
+		friend std::ostream& operator<<(std::ostream& os, const GeoMath::v2geo& at);
+	};
 	
 	class v3geo
 	{
@@ -135,136 +156,83 @@ class v2
 		friend std::ostream& operator<<(std::ostream& os, const GeoMath::v3geo& at);
 	};
 
-	class RouteTemplate2D
-	{
-	public:
-		
-		enum TemplateState
+	template <typename T>
+		class LineSegment
 		{
-			NOT_SELECT,
-			ABSOLUT,
-			METERS
+		public:
+			LineSegment(T P1_, T P2_)
+				: P1(P1_)
+				, P2(P2_)
+			{
+			}
+			LineSegment()
+			{
+			}
+			~LineSegment()
+			{
+			}
+	
+			T P1;
+			T P2;
+		
+			auto vec()
+			{
+				return P2 - P1;
+			}
+		
+			double length_xy()
+			{
+				return vec().length_xy();
+			}
+			double length()
+			{
+				return vec().length();
+			}
+		
+			bool is_cross_xy(LineSegment<T> l2, bool crossed_if_match_up = false)
+			{
+				LineSegment<T> l1 = *this;
+				auto v1 = l2.vec();
+				auto v2 = l2.P2 - l1.P1;
+				auto v3 = l2.P2 - l1.P2;
+				
+				double angle_1, angle_2;
+				int sign_1, sign_2;
+				
+				angle_1 = v1.angle_xy(v2);
+				angle_2 = v1.angle_xy(v3);
+				
+//				std::cout << angle_1 << " " << angle_2 << std::endl;
+//				std::cout << v2.length_xy()*sin(angle_1) << " " << v3.length_xy()*sin(angle_2) << std::endl;
+				
+				if (angle_1 > 0)
+					sign_1 = 1;
+				else
+					if (angle_1 < 0)
+					sign_1 = -1;		
+				else
+					sign_1 = 0;
+				
+				if (angle_2 > 0)
+					sign_2 = 1;
+				else
+					if (angle_2 < 0)
+					sign_2 = -1;		
+				else
+					sign_2 = 0;
+				
+				
+				
+				if ((sign_2 == sign_1) || (!crossed_if_match_up&&(sign_2 == 0 || sign_1 == 0)))
+					return false;
+				else
+					return true;			
+			}
+			
 		};
-		
-		
-		struct Position
-		{
-			GeoMath::v2 offset;
-			GeoMath::v2 home;
-			GeoMath::v3geo abs;
-		};
-		
-		RouteTemplate2D();
-		RouteTemplate2D(const RouteTemplate2D& route);
-		~RouteTemplate2D();
-		
-		void add_next(PositionType position,v2 point);
-		
-		TemplateState state;
-		Position at(int i);
-		int size();
-		Position operator[](const int i);
-		bool set_reference_points(v3geo abs1, int index_1, v3geo abs2, int index_2);
-		bool set_reference_points(v2 p1, int index_1, v2 p2, int index_2);
-		
-		GeoMath::v2 get_home_meters();
-	private:
-		
-		GeoMath::v3geo home_abs;
-		GeoMath::v2 home_meters;
-		
-		GeoMath::v3geo reference_point_1_abs;
-		GeoMath::v3geo reference_point_2_abs;
-		
-		GeoMath::v3 reference_point_1_meters;
-		GeoMath::v3 reference_point_2_meters;
-		
-		float course;
-		float scale;
-		
 
-		std::vector<GeoMath::v2> point_offset;
-		std::vector<GeoMath::v2> point_home;
-		
-		
-	};
 
 
 	
-	class SimpleFigure3D
-	{
-	public:
-		
-		struct Position
-		{
-			GeoMath::v3 offset;
-			GeoMath::v3 home;
-		};
-		
-		SimpleFigure3D();
-		~SimpleFigure3D();
-		
-		void add_next(PositionType position, v3 point);
-		Position at(int i);		
-		int size();
-		void rotate(double rad, Axis axis, v3 from_point, Hand hand = RIGHT);
-		Position operator[](const int i);
-		
-		GeoMath::v3 center();
-
-	private:
-		std::vector<GeoMath::v3> point_offset;
-		std::vector<GeoMath::v3> point_home;
-	};
-
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	class RouteLine
-	{
-	public:
-		enum PositionType
-		{
-			HOME,
-			OFFSET
-		};
-		
-		std::vector<v3> points;//points in Centre notion
-		bool add_next(v3 point, PositionType notion);
-		v3 at(unsigned long i, PositionType notion);
-		std::vector<v3> get_points();
-		bool rotate(double rad, Axis axis, Hand hand = RIGHT);
-		std::vector<v3geo> absPosition(v3geo home);
-		RouteLine();
-		~RouteLine();
-
-	private:
-
-	};
-
-	
-
-
-
-
-
-	std::vector<v3geo>
-		absPosListGeo(v3geo  point, std::vector<v3> list, double course);
-
-	std::vector<v3>
-		absPosList(std::vector<v3> list,
-			double          course,
-			v3              point = GeoMath::v3(0, 0, 0));
-
 }
 
