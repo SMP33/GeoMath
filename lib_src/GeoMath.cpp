@@ -376,7 +376,6 @@ return os;
 
 std::ostream& GeoMath::operator<<(std::ostream& os, const GeoMath::v2geo& at)
 {
-	os.precision(15);
 	os.flags(std::ios::left | std::ios::fixed);
 	os.fill('0');
 	os.width(6);
@@ -392,7 +391,6 @@ std::ostream& GeoMath::operator<<(std::ostream& os, const GeoMath::v2geo& at)
 
 std::ostream& GeoMath::operator<<(std::ostream& os, const GeoMath::v3geo& at)
 {
-	os.precision(15);
 	os.flags(std::ios::left | std::ios::fixed);
 	os.fill('0');
 	os.width(6);
