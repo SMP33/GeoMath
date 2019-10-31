@@ -11,7 +11,7 @@ sign(double arg)
 
 
 template<typename T, size_t M, size_t N>
-	void arr2copy(const T from[M][N], T (&to)[M][N])
+	void arr2copy(const T from[M][N], T(&to)[M][N])
 	{
 		for (size_t m = 0; m < M; m++)
 		{
@@ -22,7 +22,7 @@ template<typename T, size_t M, size_t N>
 		}
 	}
 
-GeoMath::v3 GeoMath::v3::rotate(double rad,  Axis axis, v3 c, Hand hand)
+GeoMath::v3 GeoMath::v3::rotate(double rad, Axis axis, v3 c, Hand hand)
 {	
 	v3 res(0, 0, 0);
 	switch (axis)
@@ -78,7 +78,7 @@ GeoMath::v2::length()
 }
 
 double
-GeoMath::v2::angle_xy(v2 v = v2(1, 0))
+GeoMath::v2::angle_xy(v2 v )
 {
 	double sgn;
 	double value;
@@ -160,7 +160,7 @@ bool
 GeoMath::v3::isNull()
 {
 
-	return (x == 0 && y == 0 && z==0);
+	return (x == 0 && y == 0 && z == 0);
 }
 
 double
@@ -185,7 +185,7 @@ GeoMath::v3::length()
 }
 
 double
-GeoMath::v3::angle_xy(v3 v = v3(1, 0, 0))
+GeoMath::v3::angle_xy(v3 v )
 {
 	double sgn;
 	double value;
@@ -247,9 +247,9 @@ GeoMath::v3::rotateXY(double rad)
 }
 
 GeoMath::v3
-GeoMath::v3::rotate(double a, GeoMath::Axis axis, Hand hand )
+GeoMath::v3::rotate(double a, GeoMath::Axis axis, Hand hand)
 {
-	if(hand==RIGHT) a = -a;
+	if (hand == RIGHT) a = -a;
 
 	v3 res(0, 0, 0);
 	switch (axis)
@@ -294,6 +294,20 @@ GeoMath::v3::rotate(double a, GeoMath::Axis axis, Hand hand )
 	return res;
 }
 
+GeoMath::v3
+GeoMath::v3::rotate(v3 eul)
+{
+	v3 rv(*this);
+	rv = rv.rotate(eul.x, GeoMath::X);
+	rv = rv.rotate(eul.y, GeoMath::Y);
+	rv = rv.rotate(eul.z, GeoMath::Z);
+	
+	this->x = rv.x;
+	this->y = rv.y;
+	this->z = rv.z;
+	
+	return *this;
+}
 
 GeoMath::v2
 GeoMath::v2::operator+(v2 const& v)
@@ -369,8 +383,8 @@ std::ostream& GeoMath::operator<<(std::ostream& os, const GeoMath::v2& at)
 
 std::ostream& GeoMath::operator<<(std::ostream& os, const GeoMath::v3& at)
 {
-os <<"x: "<<at.x<<" y: "<<at.y<<" z: "<<at.z;
-return os;
+	os << "x: " << at.x << " y: " << at.y << " z: " << at.z;
+	return os;
 }
 
 
@@ -396,7 +410,7 @@ std::ostream& GeoMath::operator<<(std::ostream& os, const GeoMath::v3geo& at)
 	os.width(6);
 	os << " lat: ";
 	os.width(18);
-	os<<at.lat;
+	os << at.lat;
 	os.width(6);
 	os << " lng: ";
 	os.width(18);
@@ -404,7 +418,7 @@ std::ostream& GeoMath::operator<<(std::ostream& os, const GeoMath::v3geo& at)
 	os.width(6);
 	os << " alt: ";
 	os.width(18);
-	os<<at.alt;
+	os << at.alt;
 	return os;
 }
 
@@ -522,3 +536,58 @@ bool GeoMath::v3geo::operator ==(v3geo const& p2)
 }
 
 
+GeoMath::quat::quat()
+	: v3(0, 0, 0)
+	, w(0)
+{
+}
+
+GeoMath::quat::quat(double w_, double x_, double y_, double z_)
+	: v3(x_, y_, z_)
+	, w(w_)
+{
+}
+
+GeoMath::quat::quat(v3 eul)
+{
+	v3 c = { 
+		cos(eul.x / 2),
+		cos(eul.y / 2),
+		cos(eul.z / 2)
+	};
+	
+	v3 s = { 
+		sin(eul.x / 2),
+		sin(eul.y / 2),
+		sin(eul.z / 2)
+	};
+	
+	w = c.x*c.y*c.z + s.x*s.y*s.z;
+	x = c.x*c.y*s.z - s.x*s.y*c.z;
+	y = c.x*s.y*c.z + s.x*c.y*s.z;
+	z = s.x*c.y*c.z - c.x*s.y*s.z;
+}
+
+GeoMath::v3 GeoMath::quat::to_eul()
+{
+	double alphaSin = -2*(x*z - w*y);
+	
+	if (alphaSin > 1)
+		alphaSin = 1;
+	
+	if (alphaSin < -1)
+		alphaSin = -1;
+	
+	return 
+	{
+		atan2(2*(x*y + w*z), w*w + x*x - y*y - z*z),
+		asin(alphaSin),
+		atan2(2*(y*z + w*x), w*w - x*x - y*y + z*z)	
+	};
+}
+
+std::ostream& GeoMath::operator<<(std::ostream& os, const GeoMath::quat& q)
+{
+	os << "w: " << q.w << "\tx: " << q.x << "\ty: " << q.y << "\tz: " << q.z;
+	return os;
+}

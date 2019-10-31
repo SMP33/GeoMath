@@ -69,7 +69,7 @@ namespace GeoMath
 		bool isNull();
 		double	length_xy();
 		double	length();
-		double angle_xy(v2 v);
+		double angle_xy(v2 v={1,0});
 
 		v2 normalize_xy(double abs);
 		v2 rotateXY(double rad);
@@ -100,7 +100,7 @@ namespace GeoMath
 		double	length_xy();
 		double	length_xyz();
 		double	length();
-		double angle_xy(v3 v);
+		double angle_xy(v3 v={1,0,0});
 
 		v3 normalize_xy(double abs);
 		v3 normalize_xyz(double abs);
@@ -108,6 +108,7 @@ namespace GeoMath
 
 		v3 rotate(double rad, Axis axis, Hand hand = RIGHT);
 		v3 rotate(double rad, Axis axis, v3 from_point, Hand hand = RIGHT);
+		v3 rotate(v3 eul);
 
 		v3 operator+(v3 const& v2);
 		v3 operator-(v3 const& v2);
@@ -156,83 +157,92 @@ namespace GeoMath
 		friend std::ostream& operator<<(std::ostream& os, const GeoMath::v3geo& at);
 	};
 
-	template <typename T>
-		class LineSegment
-		{
-		public:
-			LineSegment(T P1_, T P2_)
-				: P1(P1_)
-				, P2(P2_)
-			{
-			}
-			LineSegment()
-			{
-			}
-			~LineSegment()
-			{
-			}
 	
-			T P1;
-			T P2;
+	class quat : public v3
+	{
+	public:
+		double w;
 		
-			auto vec()
-			{
-				return P2 - P1;
-			}
+		quat();
+		quat(double w, double x, double y, double z);
+		quat(v3 eul);
+		v3 to_eul();
 		
-			double length_xy()
-			{
-				return vec().length_xy();
-			}
-			double length()
-			{
-				return vec().length();
-			}
-		
-			bool is_cross_xy(LineSegment<T> l2, bool crossed_if_match_up = false)
-			{
-				LineSegment<T> l1 = *this;
-				auto v1 = l2.vec();
-				auto v2 = l2.P2 - l1.P1;
-				auto v3 = l2.P2 - l1.P2;
-				
-				double angle_1, angle_2;
-				int sign_1, sign_2;
-				
-				angle_1 = v1.angle_xy(v2);
-				angle_2 = v1.angle_xy(v3);
-				
-//				std::cout << angle_1 << " " << angle_2 << std::endl;
-//				std::cout << v2.length_xy()*sin(angle_1) << " " << v3.length_xy()*sin(angle_2) << std::endl;
-				
-				if (angle_1 > 0)
-					sign_1 = 1;
-				else
-					if (angle_1 < 0)
-					sign_1 = -1;		
-				else
-					sign_1 = 0;
-				
-				if (angle_2 > 0)
-					sign_2 = 1;
-				else
-					if (angle_2 < 0)
-					sign_2 = -1;		
-				else
-					sign_2 = 0;
-				
-				
-				
-				if ((sign_2 == sign_1) || (!crossed_if_match_up&&(sign_2 == 0 || sign_1 == 0)))
-					return false;
-				else
-					return true;			
-			}
-			
-		};
-
-
-
+		friend std::ostream& operator<<(std::ostream& os, const GeoMath::quat& at);
+	};
 	
+	//	template <typename T>
+//		class LineSegment
+//		{
+//		public:
+//			LineSegment(T P1_, T P2_)
+//				: P1(P1_)
+//				, P2(P2_)
+//			{
+//			}
+//			LineSegment()
+//			{
+//			}
+//			~LineSegment()
+//			{
+//			}
+//	
+//			T P1;
+//			T P2;
+//		
+//			auto vec()
+//			{
+//				return P2 - P1;
+//			}
+//		
+//			double length_xy()
+//			{
+//				return vec().length_xy();
+//			}
+//			double length()
+//			{
+//				return vec().length();
+//			}
+//		
+//			bool is_cross_xy(LineSegment<T> l2, bool crossed_if_match_up = false)
+//			{
+//				LineSegment<T> l1 = *this;
+//				auto v1 = l2.vec();
+//				auto v2 = l2.P2 - l1.P1;
+//				auto v3 = l2.P2 - l1.P2;
+//				
+//				double angle_1, angle_2;
+//				int sign_1, sign_2;
+//				
+//				angle_1 = v1.angle_xy(v2);
+//				angle_2 = v1.angle_xy(v3);
+//				
+////				std::cout << angle_1 << " " << angle_2 << std::endl;
+////				std::cout << v2.length_xy()*sin(angle_1) << " " << v3.length_xy()*sin(angle_2) << std::endl;
+//				
+//				if (angle_1 > 0)
+//					sign_1 = 1;
+//				else
+//					if (angle_1 < 0)
+//					sign_1 = -1;		
+//				else
+//					sign_1 = 0;
+//				
+//				if (angle_2 > 0)
+//					sign_2 = 1;
+//				else
+//					if (angle_2 < 0)
+//					sign_2 = -1;		
+//				else
+//					sign_2 = 0;
+//				
+//				
+//				
+//				if ((sign_2 == sign_1) || (!crossed_if_match_up&&(sign_2 == 0 || sign_1 == 0)))
+//					return false;
+//				else
+//					return true;			
+//			}
+//		};
 }
 
